@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 퀴즈 이벤트</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="container">
+        <h1>여행 퀴즈</h1>
+        <div id="quiz"></div>
+        <div id="answer-container">
+            <input class="input" type="text" id="answer" autocomplete="off">
+            <button class="submit" onclick="checkAnswer()">다음 문제로</button>
+        </div>
+        <button id="before" onclick="goBack()">메인화면으로</button>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>

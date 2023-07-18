@@ -1,0 +1,82 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/trip.avif);
+    margin: 0;
+    padding: 20px;
+    color: #080808;
+}
+
+#schedule-form {
+    margin-bottom: 20px;
+}
+
+#content-form {
+    margin-bottom: 20px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+#save-btn {
+    border-radius: 7px;
+    background-color: #4CAF50;
+    margin-left: 5px;
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#save-btn:hover {
+    background-color: #45A242;
+    transform: scale(1.1);
+}
+
+#before {
+    border-radius: 7px;
+    background-color: #f4746b;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    margin-left: 5px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#before:hover {
+    background-color: #d63c33;
+    transform: scale(1.1);
+}
+
+#content-input {
+    width: 200px;
+    height: 70px;
+    border-radius: 7px;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.calendar-cell {
+    background-color: #ffffff;
+    border: 3px solid #cc5959;
+    padding: 10px;
+}
+
+.schedule-item {
+    background-color: #ffffff;
+    border: 2px solid #5e5e5c;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: #333333;
+}

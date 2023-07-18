@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/trip.avif);
+    padding: 20px;
+}
+  
+h1 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+  
+.review-form {
+    width: 100%;
+    height: 320px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    resize: none;
+    color: #333333;
+    transition: border-color 0.3s ease-in-out;
+}
+  
+.review-form h2 {
+    margin-bottom: 10px;
+}
+  
+.review-form label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+  
+.review-form input[type="text"] {
+    width: 99%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.review-form textarea {
+    width: 99%;
+    height: 70px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#save {
+    background-color: #4CAF50;
+    width: 80px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+#save:hover {
+    background-color: #45A242;
+    transform: scale(1.1);
+}
+
+#before {
+    background-color: #f4746b;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+}
+
+#before:hover {
+    background-color: #D6463C;
+    transform: scale(1.1);
+}
+
+.review-list {
+    width: 100%;
+    border-radius: 10px; 
+    background-color: #f8f8f8;
+    border: 2px solid #4CAF50;
+    padding-left: 10px;
+}
+
+.review-list h2 {
+    margin-bottom: 10px;
+}
+  
+.review-list li {
+    margin-bottom: 10px;
+}
+  
+.review-list li span {
+    font-weight: bold;
+}
+  
+.review-list li .delete-btn {
+    margin-left: 10px;
+    color: red;
+    cursor: pointer;
+}
+  
+.star-rating {
+    display: inline-block;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+}
+  
+.star-rating .star {
+    display: inline-block;
+}
+  
+.star-rating .star.active {
+    color: gold;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행지 리뷰</title>
+  <link rel="stylesheet" href="review.css">
+</head>
+<body>
+  <h1>여행지 리뷰</h1>
+
+  <div class="review-form">
+    <h2>리뷰 작성</h2>
+    <form id="reviewForm">
+      <div>
+        <label for="place">여행지:</label>
+        <input type="text" id="place" autocomplete="off" required>
+      </div>
+      <div>
+        <label for="review">리뷰:</label>
+        <textarea id="review" autocomplete="off" required></textarea>
+      </div>
+      <div>
+        <label for="rating">별점:</label>
+        <select id="rating">
+          <option value="1">1점</option>
+          <option value="2">2점</option>
+          <option value="3">3점</option>
+          <option value="4">4점</option>
+          <option value="5">5점</option>
+        </select>
+      </div>
+      <button type="submit" id="save">리뷰 저장</button>
+      <button id="before" onclick="goBack()">메인화면으로</button>
+    </form>
+  </div>
+
+  <div class="review-list">
+    <h2>리뷰 목록</h2>
+    <ul id="reviewList"></ul>
+  </div>
+
+  <script src="review.js"></script>
+</body>
+</html>
