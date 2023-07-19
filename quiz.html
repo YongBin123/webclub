@@ -9,11 +9,14 @@
 <body>
     <div class="container">
         <h1>여행 퀴즈</h1>
-        <div id="quiz"></div>
+        <div id="quiz">
+            <h2 id="questionText"></h2>
+        </div>
         <div id="answer-container">
-            <input class="input" type="text" id="answer" autocomplete="off">
+            <textarea class="input" id="answer" placeholder="정답을 입력하세요" autocomplete="off"></textarea>
             <button class="submit" onclick="checkAnswer()">다음 문제로</button>
         </div>
+        <div id="feedback"></div>
         <button id="before" onclick="goBack()">메인화면으로</button>
     </div>
     <script src="quiz.js"></script>

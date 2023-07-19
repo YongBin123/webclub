@@ -7,7 +7,10 @@
   <link rel="stylesheet" href="review.css">
 </head>
 <body>
-  <h1>여행지 리뷰</h1>
+  <nav>
+    <h1>여행지 리뷰</h1>
+    <button id="before" onclick="goBack()">메인화면으로</button>
+  </nav>
 
   <div class="review-form">
     <h2>리뷰 작성</h2>
@@ -31,7 +34,7 @@
         </select>
       </div>
       <button type="submit" id="save">리뷰 저장</button>
-      <button id="before" onclick="goBack()">메인화면으로</button>
+      <button id="delete" onclick="deleteMemo()">지우기</button>
     </form>
   </div>
 

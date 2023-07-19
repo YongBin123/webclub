@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="memo.css">
 </head>
 <body>
+    <nav>
+        <button id="before" onclick="goBack()">메인화면으로</button>
+    </nav>
     <div class="container">
         <h1>여행 메모</h1>
         <div class="memo">
             <textarea id="memoText" placeholder="메모를 입력하세요"></textarea>
             <button id="save" onclick="saveMemo()">저장</button>
-            <button id="before" onclick="goBack()">메인화면으로</button>
+            <button id="delete" onclick="deleteMemo()">지우기</button>
         </div>
         <div class="saved-memos" id="savedMemos">
             

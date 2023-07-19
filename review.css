@@ -68,9 +68,9 @@ h1 {
     transform: scale(1.1);
 }
 
-#before {
-    background-color: #f4746b;
-    width: 100px;
+#delete {
+    background-color: #f49c06;
+    width: 80px;
     height: 30px;
     border: none;
     border-radius: 15px;
@@ -81,6 +81,27 @@ h1 {
     transition: background-color 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-top: 10px;
+}
+
+#delete:hover {
+    background-color: #f59841;
+    transform: scale(1.1);
+}
+
+#before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f4746b;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #before:hover {

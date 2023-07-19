@@ -5,15 +5,16 @@ function hideText() {
     var hideButton1 = document.getElementById("hideButton1");
     var loginForm = document.querySelector('.login-form');
     var navList = document.querySelector('.nav');
-    var navList1 = document.querySelector('.nav1');
-    var searchTerm = document.getElementById("searchTerm");
-    var searchResult = document.getElementById("searchResult");
+    var search = document.querySelector(".search");
+    var searchResult = document.getElementById('searchResult')
   
     welcomeHeading.innerHTML = "";
     infoText.style.display = "none";
     hideButton.style.display = "none";
     hideButton1.style.display = "inline-block";
     loginForm.style.display = "inline-block";
+    search.style.display = "inline-block";
+    searchResult.style.display = "inline-block";
   
     navList.style.display = "block";
     navList.style.position = "absolute";
@@ -21,14 +22,15 @@ function hideText() {
     navList.style.top = "-100%"; // 초기 위치
     navList.style.transform = "translate(-50%, -100%)"; // 화면 위 (숨겨짐)
     navList.style.transition = "top 1s, transform 1s"; // 속성 변경 1초동안 천천히
-  
-    navList1.style.display = "block";
-    navList1.style.position = "absolute";
-    navList1.style.right = "0"; // 오른쪽 위치
-    navList1.style.bottom = "-100%"; // 초기 위치
-    navList1.style.transform = "translate(0, 100%)"; // 아래로 숨겨짐
-    navList1.style.transition = "bottom 1s, transform 1s"; // 속성 변경 1초동안 천천히
-  
+
+    search.style.opacity = "0"; // 초기 투명도
+    search.style.transform = "translateX(-100%)"; // 왼쪽으로 숨김
+    search.style.transition = "opacity 1s, transform 1s"; // 속성 변경 1초동안 천천히
+
+    searchResult.style.opacity = "0"; // 초기 투명도
+    searchResult.style.transform = "translateX(-100%)"; // 왼쪽으로 숨김
+    searchResult.style.transition = "opacity 1s, transform 1s"; // 속성 변경 1초동안 천천히
+
     loginForm.style.opacity = "0"; // 초기 투명도
     loginForm.style.transform = "translateX(-100%)"; // 왼쪽으로 숨김
     loginForm.style.transition = "opacity 1s, transform 1s"; // 속성 변경 1초동안 천천히
@@ -49,16 +51,21 @@ function hideText() {
     }, 100);
   
     setTimeout(function () {
-        navList.style.top = "27%"; 
+        navList.style.top = "10%"; 
         navList.style.opacity = "1"; 
-        navList.style.transform = "translate(-50%, -50%)";
+        navList.style.transform = "translate(-40%, -50%)";
     }, 200);
-  
+
     setTimeout(function () {
-        navList1.style.bottom = "5%"; 
-        navList1.style.right = "25%"; 
-        navList1.style.opacity = "1"; 
-        navList1.style.transform = "translate(0, -50%)";
+      search.style.top = "25%";
+      search.style.opacity = "1"; // 로그인 폼 표시
+      search.style.transform = "translateX(0)"; // 오른쪽으로 이동하여 나타남
+    }, 100);
+
+    setTimeout(function () {
+      searchResult.style.top = "25%";
+      searchResult.style.opacity = "1"; // 로그인 폼 표시
+      searchResult.style.transform = "translateX(0)"; // 오른쪽으로 이동하여 나타남
     }, 100);
   
     setTimeout(function () {
@@ -72,123 +79,121 @@ function hideText() {
     }, 200);
   }
   
-  function login() {
-    event.preventDefault();
-    var loginForm = document.querySelector('.login-form');
-    var id = document.getElementById('id');
-    var password = document.getElementById('password');
+function login() {
+  event.preventDefault();
+  var loginForm = document.querySelector('.login-form');
+  var id = document.getElementById('id');
+  var password = document.getElementById('password');
   
-    alert("로그인이 완료되었습니다!");
-    id.value = "";
-    password.value = "";
-  }
+  alert("로그인이 완료되었습니다!");
+  id.value = "";
+  password.value = "";
+}
   
-  function goBack() {
-    var welcomeHeading = document.getElementById("welcomeHeading");
-    var infoText = document.getElementById("infoText");
-    var hideButton = document.getElementById("hideButton");
-    var hideButton1 = document.getElementById("hideButton1");
-    var loginForm = document.querySelector('.login-form');
-    var navList = document.querySelector('.nav'); 
-    var navList1 = document.querySelector('.nav1');
-    var searchTerm = document.getElementById("searchTerm");
-    var searchResult = document.getElementById("searchResult");
+function goBack() {
+  var welcomeHeading = document.getElementById("welcomeHeading");
+  var infoText = document.getElementById("infoText");
+  var hideButton = document.getElementById("hideButton");
+  var hideButton1 = document.getElementById("hideButton1");
+  var loginForm = document.querySelector('.login-form');
+  var navList = document.querySelector('.nav'); 
+  var searchTerm = document.getElementById("searchTerm");
+  var searchResult = document.getElementById("searchResult");
   
-    welcomeHeading.innerHTML = "여행 정보 홈페이지에 오신 것을 환영합니다!";
-    infoText.style.display = "block";
-    hideButton.style.display = "block";
-    hideButton1.style.display = "none";
-    loginForm.style.display = "none";
-    navList.style.display = "none";
-    navList1.style.display = "none";
+  welcomeHeading.innerHTML = "여행 정보 홈페이지에 오신 것을 환영합니다!";
+  infoText.style.display = "block";
+  hideButton.style.display = "block";
+  hideButton1.style.display = "none";
+  loginForm.style.display = "none";
+  navList.style.display = "none";
+  searchTerm.value = "";
+  searchResult.value = "";
+}
+  
+function search() {
+  var searchTerm = document.getElementById("searchTerm");
+  var searchResult = document.getElementById("searchResult");
+      
+  var files = ["seoul.html", "gyeonggi_incheon.html", "daejeon_sejong_chungcheong.html", "busan_ulsan.html", "daegu_gyeongsang.html", "gwangju_jeolla.html", "gangwon.html", "jeju.html"]; // 검색 대상 파일들의 배열
+      
+  var found = false;
+      
+  var searchPromises = files.map(function (file) {
+    return fetch(file)
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (html) {
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, "text/html");
+        var paragraphs = doc.getElementsByTagName("p");
+      
+        for (var i = 0; i < paragraphs.length; i++) {
+          var text = paragraphs[i].innerHTML.replace(/<br>/g, " ");
+      
+          if (text.includes(searchTerm.value)) {
+            searchResult.value = text;
+            found = true;
+            return; // 검색 결과를 찾으면 함수 종료
+          }
+        }
+      })
+      .catch(function (error) {
+        console.error("파일을 가져오는 도중 오류가 발생했습니다.", error);
+      });
+  });
+      
+  Promise.all(searchPromises)
+    .then(function () {
+      if (!found) {
+        searchResult.value = "일치하는 정보가 없습니다.";
+      }
+    });
+      
+  searchTerm.addEventListener("click", function() {
     searchTerm.value = "";
     searchResult.value = "";
-  }
-  
-  function search() {
-      var searchTerm = document.getElementById("searchTerm");
-      var searchResult = document.getElementById("searchResult");
-      
-      var files = ["seoul.html", "gyeonggi_incheon.html", "daejeon_sejong_chungcheong.html", "busan_ulsan.html", "daegu_gyeongsang.html", "gwangju_jeolla.html", "gangwon.html", "jeju.html"]; // 검색 대상 파일들의 배열
-      
-      var found = false;
-      
-      var searchPromises = files.map(function (file) {
-        return fetch(file)
-          .then(function (response) {
-            return response.text();
-          })
-          .then(function (html) {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(html, "text/html");
-            var paragraphs = doc.getElementsByTagName("p");
-      
-            for (var i = 0; i < paragraphs.length; i++) {
-              var text = paragraphs[i].innerHTML.replace(/<br>/g, " ");
-      
-              if (text.includes(searchTerm.value)) {
-                searchResult.value = text;
-                found = true;
-                return; // 검색 결과를 찾으면 함수 종료
-              }
-            }
-          })
-          .catch(function (error) {
-            console.error("파일을 가져오는 도중 오류가 발생했습니다.", error);
-          });
-      });
-      
-      Promise.all(searchPromises)
-        .then(function () {
-          if (!found) {
-            searchResult.value = "일치하는 정보가 없습니다.";
-          }
-        });
-      
-      searchTerm.addEventListener("click", function() {
-        searchTerm.value = "";
-        searchResult.value = "";
-      });
-    }  
+  });
+}  
     
-  function openNewWindow(region) {
-      var url;
-      if (region === "서울") {
-          url = "seoul.html";
-      } else if (region === "경기/인천") {
-          url = "gyeonggi_incheon.html";
-      } else if (region === "대전/세종/충청") {
-          url = "daejeon_sejong_chungcheong.html";
-      } else if (region === "부산/울산") {
-          url = "busan_ulsan.html";
-      } else if (region === "대구/경상") {
-          url = "daegu_gyeongsang.html";
-      } else if (region === "광주/전라") {
-          url = "gwangju_jeolla.html";
-      } else if (region === "강원") {
-          url = "gangwon.html";
-      } else if (region === "제주") {
-          url = "jeju.html";
-      }
-      window.open(url);
+function openNewWindow(region) {
+  var url;
+  if (region === "서울") {
+      url = "seoul.html";
+  } else if (region === "경기/인천") {
+      url = "gyeonggi_incheon.html";
+  } else if (region === "대전/세종/충청") {
+      url = "daejeon_sejong_chungcheong.html";
+  } else if (region === "부산/울산") {
+      url = "busan_ulsan.html";
+  } else if (region === "대구/경상") {
+      url = "daegu_gyeongsang.html";
+  } else if (region === "광주/전라") {
+      url = "gwangju_jeolla.html";
+  } else if (region === "강원") {
+      url = "gangwon.html";
+  } else if (region === "제주") {
+      url = "jeju.html";
   }
+  window.open(url);
+}
   
-  function memo() {
-      location.href = "memo.html";
-  }
+function memo() {
+  location.href = "memo.html";
+}
   
-  function quiz() {
-      location.href = "quiz.html";
-  }
+function quiz() {
+  location.href = "quiz.html";
+}
   
-  function packing() {
-      location.href = "packing.html";
-  }
+function packing() {
+  location.href = "packing.html";
+}
   
-  function plan() {
-      location.href = "plan.html";
-  }
+function plan() {
+  location.href = "plan.html";
+}
   
-  function review() {
-      location.href = "review.html";
-  }
+function review() {
+  location.href = "review.html";
+}

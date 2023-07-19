@@ -9,7 +9,12 @@
 </head>
 
 <body>
-  <h1>여행 패킹 리스트</h1>
+  <header>
+    <h1>여행 패킹 리스트</h1>
+    <nav>
+      <button id="before" onclick="goBack()">메인화면으로</button>
+    </nav>
+  </header>
 
   <div class="season-selector">
     <label for="destination">여행 목적지를 선택하세요:</label>
@@ -26,7 +31,6 @@
       <option value="winter">겨울</option>
     </select>
     <button id="show-items">아이템 보기</button>
-    <button id="before" onclick="goBack()">메인화면으로</button>
   </div>
 
   <div id="item-list">

@@ -95,6 +95,16 @@ function clearInputs() {
 
 document.getElementById("save-btn").addEventListener("click", saveSchedule);
 
+function deleteMemo() {
+  document.getElementById("date-input").value = "";
+  document.getElementById("location-input").value = "";
+  document.getElementById("content-input").value = "";
+  document.getElementById("budget-input").value = "";
+  document.getElementById("transportation-input").value = "";
+  document.getElementById("accommodation-input").value = "";
+  document.getElementById("weather-input").value = "";
+}
+
 function goBack() {
     window.open("trip.html");
     window.close();

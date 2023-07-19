@@ -29,6 +29,10 @@ function saveMemo() {
     }
   }  
 
+function deleteMemo() {
+  document.getElementById("memoText").value = "";
+}
+
 function goBack() {
     window.open("trip.html");
     window.close();

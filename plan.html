@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="plan.css">
 </head>
 <body>
+  <nav>
+    <button id="before" onclick="goBack()">메인화면으로</button>
+  </nav>
   <div id="schedule-form">
     <input type="date" id="date-input">
     <input type="text" id="location-input" placeholder="장소">
@@ -18,7 +21,7 @@
   <div id="content-form">
     <textarea id="content-input" placeholder="일정 내용"></textarea>
     <button id="save-btn">저장</button>
-    <button id="before" onclick="goBack()">메인화면으로</button>
+    <button id="delete" onclick="deleteMemo()">지우기</button>
   </div>
 
   <div id="calendar"></div>

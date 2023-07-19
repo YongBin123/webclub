@@ -59,7 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  function goBack() {
-    window.open("trip.html");
-    window.close();
+function deleteMemo() {
+  document.getElementById("place").value = "";
+  document.getElementById('review').value = "";
+  document.getElementById('rating').value = "1";
+}
+
+function goBack() {
+  window.open("trip.html");
+  window.close();
 }

@@ -45,23 +45,26 @@ label {
 }
 
 #before {
-    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
     background-color: #f4746b;
-    margin-left: 5px;
     border: none;
     color: #ffffff;
-    padding: 7px;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
+    padding: 15px 30px;
+    border-radius: 20px;
     cursor: pointer;
-}
-
-#before:hover {
-    background-color: #d63c33;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  #before:hover {
+    background-color: #D6463C;
     transform: scale(1.1);
-}
-
+  }
+  
 #item-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

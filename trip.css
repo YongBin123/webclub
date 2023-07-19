@@ -10,40 +10,48 @@
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/trip.avif);
 }
 
-.container .header {
-    width: 80%;
-    height: 80px;
-    margin: 0 auto;
+.container .logo-nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.container .header h1 a {
-    font-size: 30px;
+.container .logo-nav h1 {
+    margin-top: 27px;
+    margin-left: 35px;
+}
+
+.container .logo-nav a {
+    font-size: 40px;
     font-weight: normal; 
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+}
+
 .container .nav {
     display: none;
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%); /*세로축 방향으로 50% 이동 -> 세로 중앙에 정렬*/
+    align-items: center;
     color: rgb(255, 255, 255);
     text-align: right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 40px;
 }
 
 .container .nav ul {
     white-space: nowrap;
     padding: 0;
     display: flex;
-    justify-content: center; /* 가로 정렬 */
-    align-items: center; /* 세로 정렬 */
+    justify-content: center;
+    align-items: center;
 }
 
 .container .nav ul li {
@@ -51,7 +59,7 @@
     margin: 0 10px;
     list-style: none;
     text-align: center;
-    font-size: 25px;
+    font-size: 23px;
 }
 
 .container .nav ul li a {
@@ -74,15 +82,11 @@
     background-color: #cfd0d0;
 }
 
-.search {
-    margin-top: 10px;
-}
-
 .container .text {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);  /*가로축 세로축 이동 -> 가운데 정렬*/
+    transform: translate(-50%, -50%);  
     color: white;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -120,74 +124,40 @@
     margin-top: 670px;
 }
 
+.container #nav_list1 {
+    margin-top: 50px;
+}
+
 .container .search {
-    position: absolute;
-    top: 30px;
-    left: 700px;
-    display: flex;
-    align-items: center;
-}
-
-.container .search button {
-    margin-left: 5px;
-    white-space: nowrap; /* 버튼 내의 텍스트가 한 줄로 표시되도록 설정 */
-    width: auto;
-}
-
-.container #searchResult {
-    margin-top: 30px;
-    margin-left: 700px;
-}
-
-.container .nav1 {
     display: none;
-    position: fixed;
-    right: 10%;
-    bottom: 10%;
-    transform: translateY(-10%); /*세로축 방향으로 50% 이동 -> 세로 중앙에 정렬*/
-    color: rgb(255, 255, 255);
-    text-align: right;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 10px;
 }
-  
-.container .nav1 ul {
-    white-space: nowrap;
-    padding: 0;
-    display: flex;
-    flex-direction: column; /* 세로로 블록이 쌓이도록 수정 */
-    justify-content: center; /* 가로 정렬 */
-    align-items: center; /* 세로 정렬 */
-}
-  
-.container .nav1 ul li {
-    display: block; /* 인라인 블록 요소로 변경 */
-    margin: 10px 0; /* 가로 간격은 유지, 세로 간격을 추가 */
-    list-style: none;
-    text-align: center;
-    font-size: 20px;
-}
-  
-.container .nav1 ul li a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    display: block;
-}
-  
-.container .nav1 ul li a:hover {
-    color: #1fdfdf;
-    transform: scale(1.1);
+
+.container textarea {
+    display: none;
+    width: 300px;
+    height: 100px;
+    margin-top: 2px;
+    margin-left: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #cfd0d0;
 }
 
 .login-form {
     display: none;
     max-width: 300px;
-    margin-left: 40px;
+    margin-right: 40px;
     margin-top: 5px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     position: absolute;
-    left: 20px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -217,7 +187,7 @@
     border-radius: 4px;
     cursor: pointer;
 }
-    
+
 @media screen and (max-width: 600px) {
     .container .header {
         width: 90%;

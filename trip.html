@@ -9,10 +9,12 @@
 </head>
 <body>
 <div class="container">
-    <div class="header">
+    <div class="logo-nav">
         <h1><a href="#">LETSGOTRIP</a></h1>
+    </div>
+    <div class="header">
         <div class="nav">
-            <ul>
+            <ul id ="nav_list">
                 <li class="nav-item"><a href="#" onclick="openNewWindow('서울')">서울</a></li>
                 <li class="nav-item"><a href="#" onclick="openNewWindow('경기/인천')">경기도/인천</a></li>
                 <li class="nav-item"><a href="#" onclick="openNewWindow('대전/세종/충청')">대전/세종/충청도</a></li>
@@ -22,13 +24,23 @@
                 <li class="nav-item"><a href="#" onclick="openNewWindow('강원')">강원도</a></li>
                 <li class="nav-item"><a href="#" onclick="openNewWindow('제주')">제주도</a></li>
             </ul>
-            <div class="search">
-                <input type="text" id="searchTerm" placeholder="검색어를 입력하세요" autocomplete="off">
-                <button onclick="search()">검색</button>
-            </div>
-            <textarea id="searchResult" rows="5" cols="40" placeholder="검색한 여행지 정보가 이곳에 뜹니다."></textarea>
+            <ul id ="nav_list1">
+                <li class="nav-item"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
+                <li class="nav-item"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
+                <li class="nav-item"><a href="#" onclick="memo()">여행 메모</a></li>
+                <li class="nav-item"><a href="#" onclick="plan()">여행 플래너</a></li>
+                <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
+            </ul>
         </div>
     </div>
+    <div class="search">
+        <input type="text" id="searchTerm" placeholder="검색어를 입력하세요" autocomplete="off">
+        <button onclick="search()">검색</button>
+    </div>
+    <div>
+        <textarea id="searchResult" rows="5" cols="40" placeholder="검색한 여행지 정보가 이곳에 뜹니다."></textarea>
+    </div>
+    
     <div class="login-form">
         <form>
           <div class="form-group">
@@ -48,15 +60,6 @@
         <p id="infoText">여러분이 추천 받고 싶은 여행지가 있으시다면,<br>여기에서 많은 정보를 얻어가세요</p>
         <button id="hideButton" onclick="hideText()">둘러보기</button>
         <button id="hideButton1" onclick="goBack()" style="display: none;">메인화면으로</button>
-    </div>
-    <div class="nav1">
-        <ul>
-            <li class="nav-item1"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
-            <li class="nav-item1"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
-            <li class="nav-item1"><a href="#" onclick="memo()">여행 메모</a></li>
-            <li class="nav-item1"><a href="#" onclick="plan()">여행 플래너</a></li>
-            <li class="nav-item1"><a href="#" onclick="review()">여행지 리뷰</a></li>
-        </ul>
     </div>
 </div>
 </body>

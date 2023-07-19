@@ -60,9 +60,9 @@ textarea:focus {
     transform: scale(1.1);
 }
 
-#before {
+#delete {
     border-radius: 5px;
-    background-color: #f4746b;
+    background-color: #f49c06;
     margin-left: 5px;
     border: none;
     color: #ffffff;
@@ -71,6 +71,27 @@ textarea:focus {
     font-weight: bold;
     transition: background-color 0.3s ease-in-out;
     cursor: pointer;
+}
+
+#delete:hover {
+    background-color: #f59841;
+    transform: scale(1.1);
+}
+
+#before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f4746b;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #before:hover {
