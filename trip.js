@@ -5,16 +5,20 @@ function hideText() {
     var hideButton1 = document.getElementById("hideButton1");
     var loginForm = document.querySelector('.login-form');
     var navList = document.querySelector('.nav');
-    var search = document.querySelector(".search");
-    var searchResult = document.getElementById('searchResult')
+    var searchElement = document.querySelector('.search');
+    var searchResultElement = document.getElementById('searchResult');
+    var pElement = document.getElementById('p');
+    var photos = document.querySelector('.photos');
   
     welcomeHeading.innerHTML = "";
     infoText.style.display = "none";
     hideButton.style.display = "none";
     hideButton1.style.display = "inline-block";
     loginForm.style.display = "inline-block";
-    search.style.display = "inline-block";
-    searchResult.style.display = "inline-block";
+    searchElement.style.display = "inline-block";
+    searchResultElement.style.display = "block";
+    pElement.style.display = "block";
+    photos.style.display = "block";
   
     navList.style.display = "block";
     navList.style.position = "absolute";
@@ -23,13 +27,6 @@ function hideText() {
     navList.style.transform = "translate(-50%, -100%)"; // 화면 위 (숨겨짐)
     navList.style.transition = "top 1s, transform 1s"; // 속성 변경 1초동안 천천히
 
-    search.style.opacity = "0"; // 초기 투명도
-    search.style.transform = "translateX(-100%)"; // 왼쪽으로 숨김
-    search.style.transition = "opacity 1s, transform 1s"; // 속성 변경 1초동안 천천히
-
-    searchResult.style.opacity = "0"; // 초기 투명도
-    searchResult.style.transform = "translateX(-100%)"; // 왼쪽으로 숨김
-    searchResult.style.transition = "opacity 1s, transform 1s"; // 속성 변경 1초동안 천천히
 
     loginForm.style.opacity = "0"; // 초기 투명도
     loginForm.style.transform = "translateX(-100%)"; // 왼쪽으로 숨김
@@ -42,7 +39,19 @@ function hideText() {
     hideButton1.style.transform = "translateY(100%)";
     hideButton1.style.opacity = "0";
     hideButton1.style.transition = "transform 1s, opacity 1s";
-  
+
+    searchElement.style.transition = "opacity 1s, transform 1s";
+    searchElement.style.opacity = "0";
+    searchElement.style.transform = "translateY(-100%)";
+
+    searchResultElement.style.transition = "opacity 1s, transform 1s";
+    searchResultElement.style.opacity = "0";
+    searchResultElement.style.transform = "translateY(-100%)";
+
+    photos.style.transition = "opacity 1s, transform 1s";
+    photos.style.opacity = "0";
+    photos.style.transform = "translateY(-100%)";
+
     // 일정 시간이 지난 후에 실행
     setTimeout(function () {
         loginForm.style.top = "25%";
@@ -57,18 +66,6 @@ function hideText() {
     }, 200);
 
     setTimeout(function () {
-      search.style.top = "25%";
-      search.style.opacity = "1"; // 로그인 폼 표시
-      search.style.transform = "translateX(0)"; // 오른쪽으로 이동하여 나타남
-    }, 100);
-
-    setTimeout(function () {
-      searchResult.style.top = "25%";
-      searchResult.style.opacity = "1"; // 로그인 폼 표시
-      searchResult.style.transform = "translateX(0)"; // 오른쪽으로 이동하여 나타남
-    }, 100);
-  
-    setTimeout(function () {
         hideButton.style.transform = "translateY(0)"; // 수직 이동하지 않고 원래 위치 유지
         hideButton.style.opacity = "1";
     }, 100);
@@ -77,6 +74,17 @@ function hideText() {
         hideButton1.style.transform = "translateY(0)";
         hideButton1.style.opacity = "1";
     }, 200);
+
+    setTimeout(function () {
+      searchElement.style.opacity = "1";
+      searchElement.style.transform = "translateY(0)";
+      searchResultElement.style.opacity = "1";
+      searchResultElement.style.transform = "translateY(0)";
+      pElement.style.opacity = "1";
+      pElement.style.transform = "translateY(20%, 40%)";
+      photos.style.opacity = "1";
+      photos.style.transform = "translateY(0)";
+    }, 300);
   }
   
 function login() {
@@ -97,8 +105,10 @@ function goBack() {
   var hideButton1 = document.getElementById("hideButton1");
   var loginForm = document.querySelector('.login-form');
   var navList = document.querySelector('.nav'); 
-  var searchTerm = document.getElementById("searchTerm");
-  var searchResult = document.getElementById("searchResult");
+  var searchElement = document.querySelector('.search');
+  var searchResultElement = document.getElementById('searchResult');
+  var pElement = document.getElementById('p');
+  var photos = document.querySelector('.photos');
   
   welcomeHeading.innerHTML = "여행 정보 홈페이지에 오신 것을 환영합니다!";
   infoText.style.display = "block";
@@ -106,8 +116,11 @@ function goBack() {
   hideButton1.style.display = "none";
   loginForm.style.display = "none";
   navList.style.display = "none";
-  searchTerm.value = "";
-  searchResult.value = "";
+  searchElement.style.display = "";
+  searchResultElement.style.display = "";
+  pElement.style.display = "";
+  photos.style.display = "none";
+
 }
   
 function search() {
