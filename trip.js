@@ -168,7 +168,23 @@ function search() {
     searchResult.value = "";
   });
 }  
-    
+
+document.addEventListener('DOMContentLoaded', function() {
+  const photoContainers = document.querySelectorAll('.photo-container');
+
+  photoContainers.forEach(function(photoContainer) {
+    const text = photoContainer.querySelector('p');
+
+    photoContainer.addEventListener('mouseenter', function() {
+      text.style.visibility = 'visible';
+    });
+
+    photoContainer.addEventListener('mouseleave', function() {
+      text.style.visibility = 'hidden';
+    });
+  });
+});
+
 function openNewWindow(region) {
   var url;
   if (region === "서울") {
