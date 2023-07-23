@@ -8,105 +8,124 @@
     <script src="trip.js"></script>
 </head>
 <body>
-<div class="container">
-    <div class="logo-nav">
-        <h1><a href="#">LETSGOTRIP</a></h1>
-    </div>
-    <div class="header">
-        <div class="nav">
-            <ul id ="nav_list">
-                <li class="nav-item"><a href="#" onclick="openNewWindow('서울')">서울</a></li>
-                <li class="nav-item"><a href="#" onclick="openNewWindow('경기/인천')">경기도/인천</a></li>
-                <li class="nav-item"><a href="#" onclick="openNewWindow('대전/세종/충청')">대전/세종/충청도</a></li>
-                <li class="nav-item"><a href="#" onclick="openNewWindow('부산/울산')">부산/울산</a></li>
-                <li class="nav-item"><a href="#" onclick="openNewWindow('대구/경상')">대구/경상도</a></li>
-                <li class="nav-item"><a href="#" onclick="openNewWindow('광주/전라')">광주/전라도</a></li>
-                <li class="nav-item"><a href="#" onclick="openNewWindow('강원')">강원도</a></li>
-                <li class="nav-item"><a href="#" onclick="openNewWindow('제주')">제주도</a></li>
-            </ul>
-            <ul id ="nav_list1">
-                <li class="nav-item"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
-                <li class="nav-item"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
-                <li class="nav-item"><a href="#" onclick="memo()">여행 메모</a></li>
-                <li class="nav-item"><a href="#" onclick="plan()">여행 플래너</a></li>
-                <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
-            </ul>
+    <header>
+        <div class="container">
+            <div class="logo-nav">
+                <h1><a href="#">LETSGOTRIP</a></h1>
+            </div>
+            <div class="header">
+                <div class="nav">
+                    <ul id="nav_list">
+                        <li class="nav-item"><a href="#" onclick="openNewWindow('서울')">서울</a></li>
+                        <li class="nav-item"><a href="#" onclick="openNewWindow('경기/인천')">경기도/인천</a></li>
+                        <li class="nav-item"><a href="#" onclick="openNewWindow('대전/세종/충청')">대전/세종/충청도</a></li>
+                        <li class="nav-item"><a href="#" onclick="openNewWindow('부산/울산')">부산/울산</a></li>
+                        <li class="nav-item"><a href="#" onclick="openNewWindow('대구/경상')">대구/경상도</a></li>
+                        <li class="nav-item"><a href="#" onclick="openNewWindow('광주/전라')">광주/전라도</a></li>
+                        <li class="nav-item"><a href="#" onclick="openNewWindow('강원')">강원도</a></li>
+                        <li class="nav-item"><a href="#" onclick="openNewWindow('제주')">제주도</a></li>
+                    </ul>
+                    <ul id="nav_list1">
+                        <li class="nav-item"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
+                        <li class="nav-item"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
+                        <li class="nav-item"><a href="#" onclick="memo()">여행 메모</a></li>
+                        <li class="nav-item"><a href="#" onclick="plan()">여행 플래너</a></li>
+                        <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search">
+                <input type="text" id="searchTerm" placeholder="검색어를 입력하세요" autocomplete="off">
+                <button onclick="search()">검색</button>
+            </div>
         </div>
-    </div>
-    <div class="search">
-        <input type="text" id="searchTerm" placeholder="검색어를 입력하세요" autocomplete="off">
-        <button onclick="search()">검색</button>
-    </div>
-    <div>
-        <textarea id="searchResult" rows="5" cols="40" placeholder="검색한 여행지 정보가 이곳에 뜹니다."></textarea>
-    </div>
-    
-    <div class="login-form">
-        <form>
-          <div class="form-group">
-            <label for="id">ID:</label>
-            <input type="text" id="id" name="id" required autocomplete="off">
-          </div>
-        
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required autocomplete="off">
-          </div>
-          <button type="submit" onclick="login()">Login</button>
-        </form>
-    </div>      
-    <div class="text">
-        <h2 id="welcomeHeading">여행지 추천 홈페이지에 오신 것을 환영합니다!</h2>
-        <p id="infoText">여러분이 추천 받고 싶은 여행지가 있으시다면,<br>여기에서 많은 정보를 얻어가세요</p>
-        <button id="hideButton" onclick="hideText()">둘러보기</button>
-        <button id="hideButton1" onclick="goBack()" style="display: none;">메인화면으로</button>
-    </div>
+    </header>
 
-    <p id="p">지역별 인기 여행지 1위</p>
-    <div class="photos">
-        <div class="photos-container">
-            <div class="photo-container">
-                <a href="https://www.lotteworld.com/gate.html">
-                    <img src="images/lotte.jpeg" alt="롯데월드" class="photo">
-                </a>
-                <p>서울<br><br>롯데월드</p>
-            </div>
-            <div class="photo-container">
-                <a href="https://www.everland.com/web/everland/main.html">
-                    <img src="images/everland.jpg" alt="에버랜드" class="photo">
-                </a>
-                <p>경기도/인천<br><br>에버랜드</p>
-            </div>
-            <div class="photo-container">
-                <a href="https://www.oworld.kr/newkfsweb/kfs/dcco/dccoMainindex.do">
-                    <img src="images/oworld.jpeg" alt="대전오월드" class="photo">
-                </a>
-                <p>대전/세종/충청도<br><br>대전오월드</p>
-            </div>
-            <div class="photo-container">
-                <a href="https://www.visitsealife.com/busan/">
-                    <img src="images/sealife.jpg" alt="씨라이프부산아쿠아리움" class="photo">
-                </a>
-                <p>부산/울산<br><br>씨라이프부산아쿠아리움</p>
-            </div>
-            <div class="photo-container">
-                <img src="images/e.webp" alt="Photo 5" class="photo">
-                <p>대구/경상도<br><br>이월드</p>
-            </div>
-            <div class="photo-container">
-                <img src="images/cablecar.JPG" alt="Photo 6" class="photo">
-                <p>광주/전라도<br><br>여수해상케이블카</p>
-            </div>
-            <div class="photo-container">
-                <img src="images/nami.jpeg" alt="Photo 7" class="photo">
-                <p>강원도<br><br>남이섬</p>
-            </div>
-            <div class="photo-container">
-                <img src="images/hill.jpeg" alt="Photo 8" class="photo">
-                <p>제주도<br><br>카멜리아힐</p>
+    <section class="intro">
+        <div class="text">
+            <h2 id="welcomeHeading">여행지 추천 홈페이지에 오신 것을 환영합니다!</h2>
+            <p id="infoText">여러분이 추천 받고 싶은 여행지가 있으시다면,<br>여기에서 많은 정보를 얻어가세요</p>
+            <button id="hideButton" onclick="hideText()">둘러보기</button>
+            <button id="hideButton1" onclick="goBack()" style="display: none;">메인화면으로</button>
+        </div>
+    </section>
+
+    <article class="popular-destinations">
+        <p id="p">지역별 인기 여행지 1위</p>
+        <div class="photos">
+            <div class="photos-container">
+                <div class="photo-container">
+                    <a href="https://www.lotteworld.com/gate.html">
+                        <img src="images/lotte.jpeg" alt="롯데월드" class="photo">
+                    </a>
+                    <p>서울<br><br>롯데월드</p>
+                </div>
+                <div class="photo-container">
+                    <a href="https://www.everland.com/web/everland/main.html">
+                        <img src="images/everland.jpg" alt="에버랜드" class="photo">
+                    </a>
+                    <p>경기도/인천<br><br>에버랜드</p>
+                </div>
+                <div class="photo-container">
+                    <a href="https://www.oworld.kr/newkfsweb/kfs/dcco/dccoMainindex.do">
+                        <img src="images/oworld.jpeg" alt="대전오월드" class="photo">
+                    </a>
+                    <p>대전/세종/충청도<br><br>대전오월드</p>
+                </div>
+                <div class="photo-container">
+                    <a href="https://www.visitsealife.com/busan/">
+                        <img src="images/sealife.jpg" alt="씨라이프부산아쿠아리움" class="photo">
+                    </a>
+                    <p>부산/울산<br><br>씨라이프부산아쿠아리움</p>
+                </div>
+                <div class="photo-container">
+                    <a href="https://eworld.kr/">
+                        <img src="images/e.webp" alt="이월드" class="photo">
+                    </a>
+                    <p>대구/경상도<br><br>이월드</p>
+                </div>
+                <div class="photo-container">
+                    <a href="https://eworld.kr/">
+                        <img src="images/cablecar.JPG" alt="여수해상케이블카" class="photo">
+                    </a>
+    
+                    
+                    <p>광주/전라도<br><br>여수해상케이블카</p>
+                </div>
+                <div class="photo-container">
+                    <img src="images/nami.jpeg" alt="Photo 7" class="photo">
+                    <p>강원도<br><br>남이섬</p>
+                </div>
+                <div class="photo-container">
+                    <img src="images/hill.jpeg" alt="Photo 8" class="photo">
+                    <p>제주도<br><br>카멜리아힐</p>
+                </div>
             </div>
         </div>
-    </div> 
-</div>
+    </article>
+
+    <section class="login-section">
+        <div class="login-form">
+            <form>
+                <div class="form-group">
+                    <label for="id">ID:</label>
+                    <input type="text" id="id" name="id" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required autocomplete="off">
+                </div>
+                <button type="submit" onclick="login()">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="search-results">
+        <textarea id="searchResult" rows="5" cols="40" placeholder="검색한 여행지 정보가 이곳에 뜹니다."></textarea>
+    </section>
+
+    <footer>
+        <!-- 푸터 내용 -->
+    </footer>
 </body>
 </html>
