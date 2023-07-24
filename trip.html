@@ -9,10 +9,10 @@
 </head>
 <body>
 <div class="container">
-    <div class="header">
+    <header class="header">
         <h1><a href="#">LETSGOTRIP</a></h1>
         <div class="nav">
-            <ul id ="nav_list">
+            <ul id="nav_list">
                 <li class="nav-item"><a href="#" onclick="openNewWindow('서울')">서울</a></li>
                 <li class="nav-item"><a href="#" onclick="openNewWindow('경기/인천')">경기도/인천</a></li>
                 <li class="nav-item"><a href="#" onclick="openNewWindow('대전/세종/충청')">대전/세종/충청도</a></li>
@@ -22,17 +22,10 @@
                 <li class="nav-item"><a href="#" onclick="openNewWindow('강원')">강원도</a></li>
                 <li class="nav-item"><a href="#" onclick="openNewWindow('제주')">제주도</a></li>
             </ul>
-            <ul id ="nav_list1">
-                <li class="nav-item"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
-                <li class="nav-item"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
-                <li class="nav-item"><a href="#" onclick="memo()">여행 메모</a></li>
-                <li class="nav-item"><a href="#" onclick="plan()">여행 플래너</a></li>
-                <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
-            </ul>
         </div>
-    </div>
+    </header>
     <div class="search">
-        <input type="text" id="searchTerm" placeholder="주소를 알고 싶은 여행지를 입력하세요" autocomplete="off">
+        <input type="text" id="searchTerm" placeholder="주소를 알고 싶은 여행지를 쓰세요" autocomplete="off">
         <button id ="searchButton" onclick="search()">검색</button>
     </div>
     <div>
@@ -41,26 +34,26 @@
     
     <div class="login-form">
         <form>
-          <div class="form-group">
-            <label for="id">ID:</label>
-            <input type="text" id="id" name="id" required autocomplete="off">
-          </div>
-        
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required autocomplete="off">
-          </div>
-          <button type="submit" onclick="login()">Login</button>
+            <div class="form-group">
+              <label for="id">ID:</label>
+              <input type="text" id="id" name="id" required autocomplete="off">
+            </div>
+          
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" required autocomplete="off">
+            </div>
+            <button type="submit" onclick="login()">Login</button>
         </form>
     </div>      
-    <div class="text">
+    <article class="article">
         <h2 id="welcomeHeading">여행지 추천 홈페이지에 오신 것을 환영합니다!</h2>
         <p id="infoText">여러분이 추천 받고 싶은 여행지가 있으시다면,<br>여기에서 많은 정보를 얻어가세요</p>
         <button id="hideButton1" onclick="goBack()" style="display: none;">메인화면으로</button>
-    </div>
+    </article>
 
-    <p id="p">지역별 인기 여행지 1위</p>
     <div class="photos">
+        <p id="p">지역별 인기 여행지 1위</p>
         <div class="photos-container">
             <div class="photo-container">
                 <a href="https://www.lotteworld.com/gate.html">
@@ -111,5 +104,15 @@
         </div>
     </div> 
 </div>
+<footer class="footer">
+    <ul id ="nav_list1">
+        <li class="nav-item"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
+        <li class="nav-item"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
+        <li class="nav-item"><a href="#" onclick="memo()">여행 메모</a></li>
+        <li class="nav-item"><a href="#" onclick="plan()">여행 플래너</a></li>
+        <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
+        <li class="nav-item"><a href="#" onclick="review()">지역별 인기 여행지</a></li>
+    </ul>
+</footer>
 </body>
 </html>
