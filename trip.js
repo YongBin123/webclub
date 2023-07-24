@@ -9,31 +9,6 @@ function login() {
   password.value = "";
 }
   
-function goBack() {
-  var welcomeHeading = document.getElementById("welcomeHeading");
-  var infoText = document.getElementById("infoText");
-  var hideButton = document.getElementById("hideButton");
-  var hideButton1 = document.getElementById("hideButton1");
-  var loginForm = document.querySelector('.login-form');
-  var navList = document.querySelector('.nav'); 
-  var searchElement = document.querySelector('.search');
-  var searchResultElement = document.getElementById('searchResult');
-  var pElement = document.getElementById('p');
-  var photos = document.querySelector('.photos');
-  
-  welcomeHeading.innerHTML = "여행 정보 홈페이지에 오신 것을 환영합니다!";
-  infoText.style.display = "block";
-  hideButton.style.display = "block";
-  hideButton1.style.display = "none";
-  loginForm.style.display = "none";
-  navList.style.display = "none";
-  searchElement.style.display = "";
-  searchResultElement.style.display = "";
-  pElement.style.display = "";
-  photos.style.display = "none";
-
-}
-  
 function search() {
   var searchTerm = document.getElementById("searchTerm");
   var searchResult = document.getElementById("searchResult");
