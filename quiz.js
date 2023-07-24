@@ -54,9 +54,20 @@ function checkAnswer() {
     const userAnswer = document.getElementById("answer").value; // 사용자가 입력한 정답
     const correctAnswer = questions[currentQuestion].answer;  // 현재 질문의 정답
 
+    const feedback = document.getElementById("feedback");
     if (userAnswer === correctAnswer) {
+        feedback.textContent = "정답입니다!";
+        feedback.style.color = "#4CAF50"; // 정답일 때 피드백 색상을 초록색으로 설정
         score++;
+    } else {
+        feedback.textContent = "오답입니다. 정답은 " + correctAnswer + "입니다.";
+        feedback.style.color = "#FF0000"; // 오답일 때 피드백 색상을 빨간색으로 설정
     }
+}
+
+function loadNextQuestion() {
+    const feedback = document.getElementById("feedback");
+    feedback.textContent = ""; // 피드백 초기화
 
     currentQuestion++;
 
