@@ -31,7 +31,7 @@
 
 .container .header h1 a {
     margin-top: 30px;
-    margin-left: 35px;
+    margin-left: 30px;
     font-size: 40px;
     font-weight: normal; 
     text-decoration: none;
@@ -80,7 +80,7 @@
 
 .container .article {
     position: absolute;
-    left: 53%;
+    left: 52%;
     top: 42%;
     transform: translate(-50%, -50%);  
     color: white;
