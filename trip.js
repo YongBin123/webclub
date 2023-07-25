@@ -112,3 +112,7 @@ function plan() {
 function review() {
   location.href = "review.html";
 }
+
+function community() {
+  location.href = "community.html";
+}
