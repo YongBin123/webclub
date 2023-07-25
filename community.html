@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행 커뮤니티</title>
+  <link rel="stylesheet" href="community.css">
+</head>
+<body>
+  <nav>
+    <h1>여행 커뮤니티</h1>
+    <button id="before" onclick="goBack()">메인화면으로</button>
+  </nav>
+
+  <div class="container">
+    <div class="post-form">
+      <h2>새로운 글 작성</h2>
+      <form id="postForm">
+        <div>
+          <label for="username">사용자명:</label>
+          <input type="text" id="username" autocomplete="off" required>
+        </div>
+        <div>
+          <label for="title">제목:</label>
+          <input type="text" id="title" autocomplete="off" required>
+        </div>
+        <div>
+          <label for="content">내용:</label>
+          <textarea id="content" autocomplete="off" required></textarea>
+        </div>
+        <button type="submit">글 작성</button>
+        <button id="delete" onclick="deleteMemo()">지우기</button>
+      </form>
+    </div>
+
+    <div class="post-list">
+      <h2>글 목록</h2>
+      <ol id="postList"></ol>
+    </div>
+  </div>
+
+  <script src="community.js"></script>
+</body>
+</html>
