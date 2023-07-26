@@ -8,31 +8,19 @@
     width: 100%;
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/trip.avif);
-    position: relative; /* 푸터의 위치를 설정하기 위해 상대 위치로 변경 */
 }
 
 .container .header {
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100px; /* 높이를 100px로 변경 */
-    margin: 0 auto;
-    position: relative; /* header 요소 내의 절대 위치를 위해 상대 위치로 변경 */
-    z-index: 1; /* 다른 요소보다 앞에 표시되도록 z-index 설정 */
-}
-
-.container .header h1 {
-    display: flex;
-    align-items: center;
-    font-size: 50px; /* 폰트 크기를 30px로 변경 */
-    margin-top: 10px;
 }
 
 .container .header h1 a {
-    margin-top: 30px;
-    margin-left: 30px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: normal; 
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -40,31 +28,30 @@
 }
 
 .container .nav {
-    display: inline-block;
-    align-items: center;
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /*세로축 방향으로 50% 이동 -> 세로 중앙에 정렬*/
     color: rgb(255, 255, 255);
-    text-align: left;
+    text-align: right;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-right: 120px;
-    margin-top: 20px; /* 상단 여백을 20px로 변경 */
 }
 
 .container .nav ul {
     white-space: nowrap;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* 가로 정렬 */
+    align-items: center; /* 세로 정렬 */
 }
 
 .container .nav ul li {
     display: inline-block;
+    margin: 0 10px;
     list-style: none;
     text-align: center;
     font-size: 25px;
-    margin-top: 20px;
-    margin-left: 10px;
-    padding-left: 10px;
 }
 
 .container .nav ul li a {
@@ -75,213 +62,148 @@
 
 .container .nav ul li a:hover {
     color: #1fdfdf;
-    transform: scale(1.1);
 }
 
-.container .article {
+.container .nav textarea {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #cfd0d0;
+}
+
+.search {
+    margin-top: 10px;
+}
+
+.container .text {
     position: absolute;
-    left: 52%;
-    top: 42%;
-    transform: translate(-50%, -50%);  
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);  /*가로축 세로축 이동 -> 가운데 정렬*/
     color: white;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container .article h2 {
-    font-size: 50px;
+.container .text h2 {
+    font-size: 60px;
     font-weight: bolder; 
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.container .article p {
+.container .text p {
     font-size: 20px;
+}
+
+.container .text button {
+    background: none;
+    border: 2px solid darkseagreen;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin: 30px auto;
+    display: block;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.container .text button:hover {
+    background-color: darkslategray;
 }
 
 .container .search {
+    position: absolute;
+    top: 30px;
+    left: 700px;
     display: flex;
-    width: 300px;
-    margin-left: 40px;
-    margin-top: 60px;
-    margin-bottom: 5px;
+    align-items: center;
 }
 
-#searchTerm {
-    width: 260px;
-}
-
-#searchButton {
+.container .search button {
     margin-left: 5px;
+    white-space: nowrap; /* 버튼 내의 텍스트가 한 줄로 표시되도록 설정 */
+    width: auto;
 }
 
-.container textarea {
-    display: flex;
-    width: 310px;
-    height: 80px;
-    margin-left: 40px;
-    border-radius: 5px;
-    background-color: #cfd0d0;
+.container #searchResult {
+    margin-top: 30px;
+    margin-left: 700px;
 }
 
-.login-form {
-    display: flex;
-    max-width: 300px;
-    margin-right: 40px;
-    margin-top: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color:#bbbaba;
-    border-radius: 4px;
-    position: absolute;
-    right: 20px;
-    top: 30%;
-    transform: translateY(-50%);
+#quiz:hover,
+#packing:hover,
+#memo:hover,
+#plan:hover,
+#review:hover {
+    background-color: darkslategray;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.form-group button {
-    padding: 6px 10px;
-    background-color: #4CAF50;
+#quiz, #packing, #memo, #plan, #review {
+    background: none;
+    border: 2px solid rgb(250, 178, 9);
     color: white;
-    border: none;
-    border-radius: 4px;
+    padding: 15px 20px;
+    border-radius: 20px;
+    position: fixed;
     cursor: pointer;
+    transition: all .4s;
 }
 
-#p {
-    display: grid;
-    font-size: 23px;
-    position: absolute;
-    left: 12%;
-    top: 65%;
-    transform: translate(-50%, -50%);  
-    color: white;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+#quiz {
+    right: 400px;
+    bottom: 250px;
 }
 
-.photos {
-    display: grid;
+#packing {
+    right: 450px;
+    bottom: 130px;
 }
 
-.photos-container {
-    display: grid;
-    width: 640px;
-    height: 300px;
-    border-radius: 5px;
-    grid-template-columns: repeat(8, 180px); /* 4개의 열, 각 열의 너비는 150px */
-    grid-template-rows: 150px 150px 150px 150px;
-    margin-left: 35px;
-    margin-top: 230px;
+#memo {
+    right: 260px;
+    bottom: 150px;
 }
 
-.photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+#plan {
+    right: 220px;
+    bottom: 270px;
 }
 
-.photo-container {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#review {
+    right: 80px;
+    bottom: 160px;
 }
 
-.photo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
   
-.photo-container p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%; /* 글자가 잘리지 않도록 너비 조정 */
-    text-align: center; /* 가운데 정렬 */
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-  
-.photo-container:hover img {
-    transform: scale(1.1);
-}
-  
-.photo-container:hover p {
-    opacity: 1;
-}
-  
-.photo-container a {
-    display: block; /* 링크를 블록 요소로 변경하여 전체 셀 영역에 링크 적용 */
-    width: 100%;
-    height: 100%;
-}
+@media screen and (max-width: 600px) {
+    .container .header {
+        width: 90%;
+    }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background-color: rgba(0, 0, 0, 0.3); /* 반투명한 배경색 */
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .container .nav {
+        display: block;
+    }
 
-.footer ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-}
+    .container .nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 
-.footer li {
-    margin: 0 15px;
-}
+    .container .text h2 {
+        font-size: 40px;
+    }
 
-.footer li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-}
+    .container .text p {
+        font-size: 16px;
+    }
 
-.footer li a:hover {
-    background-color: #1fdfdf;
-    color: #333; /* 호버 효과 시 글자색을 변경하여 텍스트가 더 잘 보이도록 함 */
-    transform: scale(1.1);
+    .container .text button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
 }
 
 @media screen and (max-width: 600px) {
