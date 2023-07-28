@@ -19,30 +19,18 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
-    const li = document.createElement('li');
-    const postInfo = document.createElement('span');
-    postInfo.classList.add('post-info');
-    postInfo.innerHTML = `<strong>${username}</strong> - ${getFormattedDate()}`
-    li.appendChild(postInfo);
+    const newPost = {
+      id: Date.now().toString(),
+      username: username,
+      title: title,
+      content: content,
+      date: getFormattedDate()
+    };
 
-    const postTitle = document.createElement('h3');
-    postTitle.textContent = title;
-    li.appendChild(postTitle);
+    createPostElement(newPost);
 
-    const postContent = document.createElement('p');
-    postContent.classList.add('post-content');
-    postContent.textContent = content;
-    li.appendChild(postContent);
-
-    const deleteButton = document.createElement('button');
-    deleteButton.classList.add('delete-button');
-    deleteButton.textContent = '삭제';
-    deleteButton.addEventListener('click', function() {
-      li.remove();
-    });
-    li.appendChild(deleteButton);
-
-    postList.appendChild(li);
+    savePostToServer(newPost);
+    savePostToLocalStorage(newPost);
 
     resetForm();
   });
@@ -62,6 +50,102 @@ document.addEventListener('DOMContentLoaded', function() {
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     return `${year}-${month}-${day} ${hours}:${minutes}`;
+  }
+
+  // 서버에 글 저장하기
+  function savePostToServer(post) {
+    fetch('/savePost', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(post),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+
+  // 서버에서 글 목록 가져와서 화면에 표시하기
+  function loadPostsFromServer() {
+    fetch('/getPosts')
+      .then((response) => response.json())
+      .then((posts) => {
+        posts.forEach((post) => {
+          createPostElement(post);
+        });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+
+  function createPostElement(post) {
+    const li = document.createElement('li');
+    const postInfo = document.createElement('span');
+    postInfo.classList.add('post-info');
+    postInfo.innerHTML = `<strong>${post.username}</strong> - ${post.date}`;
+    li.appendChild(postInfo);
+
+    const postTitle = document.createElement('h3');
+    postTitle.textContent = post.title;
+    li.appendChild(postTitle);
+
+    const postContent = document.createElement('p');
+    postContent.classList.add('post-content');
+    postContent.textContent = post.content;
+    li.appendChild(postContent);
+
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-button');
+    deleteButton.textContent = '삭제';
+    deleteButton.addEventListener('click', function() {
+      deletePostFromServer(post.id);
+      deletePostFromLocalStorage(post.id);
+      li.remove();
+    });
+    li.appendChild(deleteButton);
+
+    postList.appendChild(li);
+  }
+
+  // 글 삭제하기
+  function deletePostFromServer(postId) {
+    fetch(`/deletePost/${postId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+
+  // 로컬 스토리지에 글 저장하기
+  function savePostToLocalStorage(post) {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
+    savedPosts.push(post);
+    localStorage.setItem('posts', JSON.stringify(savedPosts));
+  }
+
+  // 로컬 스토리지에서 글 불러오기
+  function loadPostsFromLocalStorage() {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
+    savedPosts.forEach((post) => {
+      createPostElement(post);
+    });
+  }
+
+  function deletePostFromLocalStorage(postId) {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
+    const updatedPosts = savedPosts.filter((post) => post.id !== postId);
+    localStorage.setItem('posts', JSON.stringify(updatedPosts));
   }
 
   // Pagination 기능
@@ -101,16 +185,18 @@ document.addEventListener('DOMContentLoaded', function() {
     showPage(currentPage);
   }
 
+  loadPostsFromServer();
+  loadPostsFromLocalStorage();
   updatePagination();
 });
 
 function deleteMemo() {
-  document.getElementById("username").value = "";
-  document.getElementById("title").value = "";
-  document.getElementById("content").value = "";
+  document.getElementById('username').value = '';
+  document.getElementById('title').value = '';
+  document.getElementById('content').value = '';
 }
 
 function goBack() {
-  window.open("trip.html");
+  window.open('trip.html');
   window.close();
 }

@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('place').value = '';
     document.getElementById('review').value = '';
     selectedRating = 0;
+
+    const stars = document.querySelectorAll('.star-rating');
+    stars.forEach(star => {
+      star.classList.remove('active');
+    });
   }
 
   const stars = document.querySelectorAll('.star-rating .star');
