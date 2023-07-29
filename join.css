@@ -1,8 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/trip.avif);
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    color: #080808;
 }
 
 .container {
@@ -53,4 +54,25 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+#before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f4746b;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#before:hover {
+    background-color: #D6463C;
+    transform: scale(1.1);
 }
