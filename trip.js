@@ -10,7 +10,7 @@ function login() {
 }
 
 function join() {
-  window.location.href = "join.html";
+  window.location.href = "join.html"; 
 }
   
 function search() {
