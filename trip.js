@@ -8,6 +8,10 @@ function login() {
   id.value = "";
   password.value = "";
 }
+
+function join() {
+  window.location.href = "join.html";
+}
   
 function search() {
   var searchTerm = document.getElementById("searchTerm");
