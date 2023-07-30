@@ -88,22 +88,23 @@ h1 {
 }
 
 #before {
+    position: absolute;
+    top: 20px;
+    left: 20px;
     background-color: #f4746b;
     border: none;
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
-    padding: 15px 30px;
+    padding: 15px 20px;
     border-radius: 20px;
-    margin: 30px auto;
-    display: block;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #before:hover {
-    background-color: #D6463C;
+    background-color: #d63c33;
     transform: scale(1.1);
 }
 

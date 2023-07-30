@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
+    <nav>
+        <button id="before" onclick="goBack()">메인화면으로</button>
+    </nav>
     <div class="container">
         <h1>여행 퀴즈</h1>
         <div id="quiz">
@@ -18,7 +21,6 @@
             <button class="next" onclick="loadNextQuestion()">다음 문제로</button>
         </div>
         <div id="feedback"></div>
-        <button id="before" onclick="goBack()">메인화면으로</button>
     </div>
     <script src="quiz.js"></script>
 </body>
