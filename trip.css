@@ -139,6 +139,11 @@
     transform: translateY(-50%);
 }
 
+.login-form button {
+    border-radius: 5px;
+    padding: 3px;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -154,15 +159,6 @@
     padding: 6px;
     border: 1px solid #ccc;
     border-radius: 4px;
-}
-
-.form-group button {
-    padding: 6px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 }
 
 #p {
