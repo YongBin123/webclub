@@ -53,7 +53,7 @@ label {
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
-    padding: 15px 30px;
+    padding: 15px 20px;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
