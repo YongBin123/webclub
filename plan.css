@@ -8,10 +8,12 @@ body {
 
 #schedule-form {
     margin-bottom: 20px;
+    margin-left: 350px;
 }
 
 #content-form {
     margin-bottom: 20px;
+    margin-left: 350px;
 }
 
 #calendar {
@@ -59,7 +61,7 @@ body {
 #before {
     position: absolute;
     top: 20px;
-    right: 25px;
+    left: 25px;
     background-color: #f4746b;
     border: none;
     color: #ffffff;
@@ -78,8 +80,8 @@ body {
 }
 
 #content-input {
-    width: 200px;
-    height: 70px;
+    width: 450px;
+    height: 90px;
     border-radius: 7px;
     border: 1px solid #dddddd;
     padding: 10px;
