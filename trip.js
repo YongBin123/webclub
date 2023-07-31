@@ -1,13 +1,3 @@
-function login() {
-  event.preventDefault();
-  var loginForm = document.querySelector('.login-form');
-  var id = document.getElementById('id');
-  var password = document.getElementById('password');
-  
-  alert("로그인이 완료되었습니다!");
-  id.value = "";
-  password.value = "";
-}
 
 function join() {
   window.location.href = "join.html"; 
