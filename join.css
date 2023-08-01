@@ -41,6 +41,10 @@ input {
     outline: none;
 }
 
+input:focus {
+    border-color: #000;
+}
+
 button {
     padding: 12px;
     background-color: #007bff;
