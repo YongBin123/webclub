@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const postForm = document.getElementById('postForm');
   const postList = document.getElementById('postList');
-  const postsPerPage = 5; // 페이지당 표시되는 글 개수
-  let currentPage = 1;
 
   postForm.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -19,33 +17,84 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
 
+    const newPost = {
+      username: username,
+      title: title,
+      content: content,
+      date: getFormattedDate()
+    };
+
+    createPostElement(newPost);
+
+    savePostToServer(newPost);
+    savePostToLocalStorage(newPost);
+
+    resetForm();
+  });
+
+  function getFormattedDate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0'); // 2자리 숫자로 월을 표시하는데, 한 자리 숫자일 경우 앞에 0을 붙임
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    return `${year}-${month}-${day} ${hours}:${minutes}`; // "년도-월-일 시간:분" 형식의 문자열로 표시
+  }
+
+  function createPostElement(post) {
     const li = document.createElement('li');
     const postInfo = document.createElement('span');
     postInfo.classList.add('post-info');
-    postInfo.innerHTML = `<strong>${username}</strong> - ${getFormattedDate()}`
+    postInfo.innerHTML = `<strong>${post.username}</strong> - ${post.date}`;
     li.appendChild(postInfo);
 
     const postTitle = document.createElement('h3');
-    postTitle.textContent = title;
+    postTitle.textContent = post.title;
     li.appendChild(postTitle);
 
     const postContent = document.createElement('p');
     postContent.classList.add('post-content');
-    postContent.textContent = content;
+    postContent.textContent = post.content;
     li.appendChild(postContent);
 
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete-button');
     deleteButton.textContent = '삭제';
     deleteButton.addEventListener('click', function() {
+      deletePostFromServer(post.id); // 서버에서 해당 게시물을 삭제하는 함수
+      deletePostFromLocalStorage(post.id); // 로컬 스토리지에서 해당 게시물을 삭제하는 함수 호출
       li.remove();
     });
     li.appendChild(deleteButton);
 
     postList.appendChild(li);
+  }
 
-    resetForm();
-  });
+  function savePostToServer(post) {
+    // 서버로 글 저장 요청 보내기
+    fetch('/savePost', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', // 요청 본문의 데이터가 JSON 형식임을 서버에 알림
+      },
+      body: JSON.stringify(post), // 서버에 보낼 데이터를 JSON 형식으로 변환하여 body에 설정
+    })
+      .then((response) => response.text()) // 서버의 응답을 텍스트 형식으로 읽음
+      .then((data) => {
+        // 저장 성공 시, 화면에 저장 성공 메시지 출력
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+
+  function savePostToLocalStorage(post) {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]'); // 로컬 스토리지에서 'posts' 키에 저장된 데이터를 가져옴
+    savedPosts.push(post);
+    localStorage.setItem('posts', JSON.stringify(savedPosts)); // 새로운 데이터가 추가된 배열을 다시 JSON 형식으로 변환하여 'posts' 키에 저장
+  }
 
   function resetForm() {
     document.getElementById('username').value = '';
@@ -53,64 +102,58 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('content').value = '';
   }
 
-  // 현재 날짜와 시간을 가져오는 함수
-  function getFormattedDate() {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    return `${year}-${month}-${day} ${hours}:${minutes}`;
-  }
-
-  // Pagination 기능
-  function showPage(page) {
-    const posts = postList.children;
-    const startIndex = (page - 1) * postsPerPage;
-    const endIndex = startIndex + postsPerPage;
-
-    for (let i = 0; i < posts.length; i++) {
-      if (i >= startIndex && i < endIndex) {
-        posts[i].style.display = 'block';
-      } else {
-        posts[i].style.display = 'none';
-      }
-    }
-  }
-
-  function updatePagination() {
-    const posts = postList.children;
-    const totalPages = Math.ceil(posts.length / postsPerPage);
-
-    const pagination = document.createElement('div');
-    pagination.classList.add('pagination');
-
-    for (let i = 1; i <= totalPages; i++) {
-      const pageButton = document.createElement('button');
-      pageButton.textContent = i;
-      pageButton.addEventListener('click', function() {
-        currentPage = i;
-        showPage(currentPage);
+  function loadPostsFromServer() {
+    fetch('/getPosts') // 서버의 '/getPosts' 경로로 GET 요청을 보냄
+      .then((response) => response.json()) // 서버로부터 받은 응답을 JSON 형식으로 변환
+      .then((posts) => {
+        // 서버에서 받은 JSON 형식의 데이터를 순회하며 화면에 게시물을 표시
+        posts.forEach((post) => {
+          createPostElement(post);
+        });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
       });
-      pagination.appendChild(pageButton);
-    }
-
-    postList.appendChild(pagination);
-
-    showPage(currentPage);
+  }
+  
+  function loadPostsFromLocalStorage() {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]'); // 로컬 스토리지에서 'posts' 키에 저장된 데이터를 가져옴
+    savedPosts.forEach((post) => { // 서버에서 받은 JSON 형식의 데이터를 순회하며 화면에 게시물을 표시
+      createPostElement(post);
+    });
   }
 
-  updatePagination();
+  function deletePostFromServer(postId) {
+    // 서버의 `/deletePost/${postId}` 경로로 DELETE 요청을 보냄
+    fetch(`/deletePost/${postId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.text()) // 서버로부터 받은 응답을 텍스트 형식으로 변환
+      .then((data) => {
+        console.log(data); // 서버에서 반환된 응답 데이터를 콘솔에 출력
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+
+  function deletePostFromLocalStorage(postId) {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
+    const updatedPosts = savedPosts.filter((post) => post.id !== postId);
+    localStorage.setItem('posts', JSON.stringify(updatedPosts));
+  }
+
+  loadPostsFromServer();
+  loadPostsFromLocalStorage();
 });
 
 function deleteMemo() {
-  document.getElementById("username").value = "";
-  document.getElementById("title").value = "";
-  document.getElementById("content").value = "";
+  document.getElementById('username').value = '';
+  document.getElementById('title').value = '';
+  document.getElementById('content').value = '';
 }
 
 function goBack() {
-  window.open("trip.html");
+  window.open('trip.html');
   window.close();
 }
