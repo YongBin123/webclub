@@ -35,8 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function loadMemosFromLocalStorage() {
   // 'memos'라는 키로 저장된 데이터를 로컬 스토리지에서 가져옴
-  // 만약 'memos' 키에 저장된 데이터가 없으면 빈 배열로 초기화
-  const savedMemos = JSON.parse(localStorage.getItem('memos') || '[]');
+  const savedMemos = JSON.parse(localStorage.getItem('memos') || '[]');   // 만약 'memos' 키에 저장된 데이터가 없으면 빈 배열로 초기화
   savedMemos.forEach((memo) => { // 가져온 메모들을 순회하면서 각각의 메모를 화면에 표시하는 함수
     createMemoElement(memo);
   });
