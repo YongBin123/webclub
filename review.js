@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const stars = document.querySelectorAll('.star-rating .star');
   stars.forEach(star => {
     star.addEventListener('click', function () {
-      selectedRating = this.dataset.value;
-      const parent = this.parentElement;
+      selectedRating = this.dataset.value; // 클릭된 별의 값을 가져와서 현재 선택된 별점으로 설정
+      const parent = this.parentElement; // 클릭된 별의 부모 요소(.star-rating)에서 모든 별 요소들을 선택
       const starElements = parent.querySelectorAll('.star');
 
       starElements.forEach(starElement => {
@@ -126,8 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-// 서버로부터 리뷰 목록을 가져와서 로컬 스토리지에 저장하고 화면에 표시하는 함수
-function synchronizeReviewsFromServer() {
+// 서버로부터 리뷰 목록을 가져와서 화면에 표시하는 함수
+function loadReviewsFromServer() {
   fetch('/getReviews', {
     method: 'GET',
   })
@@ -153,7 +153,7 @@ function displayReviewsFromLocalStorage() {
 }
 
 // 서버에서 리뷰 목록을 가져옴 (로컬 스토리지와 동기화)
-synchronizeReviewsFromServer();
+loadReviewsFromServer();
 
 // 로컬 스토리지에서 리뷰 목록을 가져옴
 displayReviewsFromLocalStorage();
