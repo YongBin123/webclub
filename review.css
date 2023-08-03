@@ -14,9 +14,10 @@ h1 {
 }
   
 .review-form {
-    width: 100%;
+    width: 50%;
     height: 330px;
     margin-bottom: 20px;
+    margin-left: 350px;
     padding: 5px;
     border-radius: 10px;
     background-color: #f8f8f8;
@@ -111,11 +112,12 @@ h1 {
 }
 
 .review-list {
-    width: 100%;
+    width: 50%;
     border-radius: 10px; 
     background-color: #f8f8f8;
     border: 2px solid #4CAF50;
     padding-left: 10px;
+    margin-left: 350px;
 }
 
 .review-list h2 {
