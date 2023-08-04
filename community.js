@@ -102,6 +102,26 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('content').value = '';
   }
 
+  function deletePostFromServer(postId) {
+    // 서버의 `/deletePost/${postId}` 경로로 DELETE 요청을 보냄
+    fetch(`/deletePost/${postId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => response.text()) // 서버로부터 받은 응답을 텍스트 형식으로 변환
+      .then((data) => {
+        console.log(data); // 서버에서 반환된 응답 데이터를 콘솔에 출력
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+
+  function deletePostFromLocalStorage(postId) {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
+    const updatedPosts = savedPosts.filter((post) => post.id !== postId);
+    localStorage.setItem('posts', JSON.stringify(updatedPosts));
+  }
+
   function loadPostsFromServer() {
     fetch('/getPosts') // 서버의 '/getPosts' 경로로 GET 요청을 보냄
       .then((response) => response.json()) // 서버로부터 받은 응답을 JSON 형식으로 변환
@@ -121,26 +141,6 @@ document.addEventListener('DOMContentLoaded', function() {
     savedPosts.forEach((post) => { // 서버에서 받은 JSON 형식의 데이터를 순회하며 화면에 게시물을 표시
       createPostElement(post);
     });
-  }
-
-  function deletePostFromServer(postId) {
-    // 서버의 `/deletePost/${postId}` 경로로 DELETE 요청을 보냄
-    fetch(`/deletePost/${postId}`, {
-      method: 'DELETE',
-    })
-      .then((response) => response.text()) // 서버로부터 받은 응답을 텍스트 형식으로 변환
-      .then((data) => {
-        console.log(data); // 서버에서 반환된 응답 데이터를 콘솔에 출력
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }
-
-  function deletePostFromLocalStorage(postId) {
-    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
-    const updatedPosts = savedPosts.filter((post) => post.id !== postId);
-    localStorage.setItem('posts', JSON.stringify(updatedPosts));
   }
 
   loadPostsFromServer();
