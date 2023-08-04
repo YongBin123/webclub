@@ -117,9 +117,9 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function deletePostFromLocalStorage(postId) {
-    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]'); // 만약 'posts' 키에 저장된 데이터가 없으면 빈 배열로 초기화
     const updatedPosts = savedPosts.filter((post) => post.id !== postId);
-    localStorage.setItem('posts', JSON.stringify(updatedPosts));
+    localStorage.setItem('posts', JSON.stringify(updatedPosts)); // updatePosts 배열을 JSON 문자열로 변환한 뒤, 'posts' 키에 해당 문자열을 로컬 스토리지에 저장
   }
 
   function loadPostsFromServer() {
