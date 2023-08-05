@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const reviewList = document.getElementById('reviewList');
   let selectedRating = 0;
 
+  // 서버에서 리뷰 목록을 가져옴 (로컬 스토리지와 동기화)
+  loadReviewsFromServer();
+
+  // 로컬 스토리지에서 리뷰 목록을 가져옴
+  displayReviewsFromLocalStorage();
+
   // 리뷰 목록을 가져와서 화면에 표시하는 함수
   function displayReview(reviewData) {
     const li = document.createElement('li');
@@ -151,12 +157,6 @@ function displayReviewsFromLocalStorage() {
     displayReview(reviewData);
   });
 }
-
-// 서버에서 리뷰 목록을 가져옴 (로컬 스토리지와 동기화)
-loadReviewsFromServer();
-
-// 로컬 스토리지에서 리뷰 목록을 가져옴
-displayReviewsFromLocalStorage();
 });
 
 // 리뷰 입력 폼을 초기화하는 함수
