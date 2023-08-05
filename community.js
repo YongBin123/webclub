@@ -2,6 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const postForm = document.getElementById('postForm');
   const postList = document.getElementById('postList');
 
+  // 서버에서 글 가져옴
+  loadPostsFromServer();
+
+  // 로컬 스토리지에서 글 가져옴
+  loadPostsFromLocalStorage();
+
   postForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -31,6 +37,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     resetForm();
   });
+
+  function loadPostsFromServer() {
+    fetch('/getPosts') // 서버의 '/getPosts' 경로로 GET 요청을 보냄
+      .then((response) => response.json()) // 서버로부터 받은 응답을 JSON 형식으로 변환
+      .then((posts) => {
+        // 서버에서 받은 JSON 형식의 데이터를 순회하며 화면에 게시물을 표시
+        posts.forEach((post) => {
+          createPostElement(post);
+        });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+  
+  function loadPostsFromLocalStorage() {
+    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]'); // 로컬 스토리지에서 'posts' 키에 저장된 데이터를 가져옴
+    savedPosts.forEach((post) => { // 서버에서 받은 JSON 형식의 데이터를 순회하며 화면에 게시물을 표시
+      createPostElement(post);
+    });
+  }
 
   function getFormattedDate() {
     const now = new Date();
@@ -121,33 +148,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const updatedPosts = savedPosts.filter((post) => post.id !== postId);
     localStorage.setItem('posts', JSON.stringify(updatedPosts)); // updatePosts 배열을 JSON 문자열로 변환한 뒤, 'posts' 키에 해당 문자열을 로컬 스토리지에 저장
   }
-
-  function loadPostsFromServer() {
-    fetch('/getPosts') // 서버의 '/getPosts' 경로로 GET 요청을 보냄
-      .then((response) => response.json()) // 서버로부터 받은 응답을 JSON 형식으로 변환
-      .then((posts) => {
-        // 서버에서 받은 JSON 형식의 데이터를 순회하며 화면에 게시물을 표시
-        posts.forEach((post) => {
-          createPostElement(post);
-        });
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }
-  
-  function loadPostsFromLocalStorage() {
-    const savedPosts = JSON.parse(localStorage.getItem('posts') || '[]'); // 로컬 스토리지에서 'posts' 키에 저장된 데이터를 가져옴
-    savedPosts.forEach((post) => { // 서버에서 받은 JSON 형식의 데이터를 순회하며 화면에 게시물을 표시
-      createPostElement(post);
-    });
-  }
-
-  loadPostsFromServer();
-  loadPostsFromLocalStorage();
 });
 
-function deleteMemo() {
+function deletePost() {
   document.getElementById('username').value = '';
   document.getElementById('title').value = '';
   document.getElementById('content').value = '';
