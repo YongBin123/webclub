@@ -7,23 +7,16 @@ document.addEventListener('DOMContentLoaded', function() {
   loadReviewsFromServer();
   loadReviewsFromLocalStorage();
 
-    // 별점 선택 기능
-    const stars = document.querySelectorAll('.star-rating .star');
-    stars.forEach(star => {
-      star.addEventListener('click', function () {
-        selectedRating = this.dataset.value;
-        const parent = this.parentElement;
-        const starElements = parent.querySelectorAll('.star');
-  
-        starElements.forEach(starElement => {
-          if (starElement.dataset.value <= selectedRating) {
-            starElement.classList.add('active');
-          } else {
-            starElement.classList.remove('active');
-          }
-        });
+  // 별점 선택 기능
+  const stars = document.querySelectorAll('.star-rating .star');
+  stars.forEach((star, index) => { // stars 배열에 있는 각 별 아이콘 요소
+    star.addEventListener('click', () => {
+      selectedRating = index + 1; // 클릭한 별의 개수를 selectedRating 변수에 저장
+      stars.forEach((starElement, i) => {
+        starElement.classList.toggle('active', i < selectedRating); // 현재 별 아이콘의 index(i)가 클릭한 별의 index(selectedRating)보다 작다면,
       });
     });
+  });
 
   reviewForm.addEventListener('submit', function (event) {
     event.preventDefault();
