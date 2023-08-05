@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
-
 function loadReviewsFromServer() {
   fetch('/getReviews', {
     method: 'GET',
@@ -166,7 +164,7 @@ function resetForm() {
   selectedRating = 0;
 }
 
-function deleteMemo() {
+function deleteReview() {
   document.getElementById('place').value = '';
   document.getElementById('review').value = '';
   selectedRating = 0;
