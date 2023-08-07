@@ -20,7 +20,9 @@
             <input type="text" id="searchTerm" placeholder="주소를 알고 싶은 여행지를 쓰세요" autocomplete="off">
             <button id ="searchButton" onclick="search()">검색</button>
         </div>
-        <textarea id="searchResult" rows="5" cols="45" placeholder="검색한 여행지의 주소 정보가 이곳에 뜹니다."></textarea>
+        <div class="search1">
+            <textarea id="searchResult" rows="5" cols="45" placeholder="검색한 여행지의 주소 정보가 이곳에 뜹니다."></textarea>
+        </div>
     </header>   
     <article class="article">
         <h2 id="welcomeHeading">여행지 추천 홈페이지에 오신 것을 환영합니다!</h2>
@@ -29,7 +31,19 @@
     </article>
     <article class="article1">
         <ul id ="nav_list1">
-            <li class="nav-item"><a href="#" onclick="trip()">지역별 여행지 추천</a></li>
+            <li class="nav-item"><a href="#" onclick="toggleAccordion(document.querySelector('.accordion-content'))">지역별 여행지 추천</a></li>
+            <li class="accordion-content">
+                <ul>
+                    <li><a href="#" onclick="region1()">서울</a></li>
+                    <li><a href="#" onclick="region2()">경기도/인천</a></li>
+                    <li><a href="#" onclick="region3()">대전/세종/충청도</a></li>
+                    <li><a href="#" onclick="region4()">부산/울산</a></li>
+                    <li><a href="#" onclick="region5()">대구/경상도</a></li>
+                    <li><a href="#" onclick="region6()">광주/전라도</a></li>
+                    <li><a href="#" onclick="region7()">강원도</a></li>
+                    <li><a href="#" onclick="region8()">제주도</a></li>
+                </ul>
+            </li>
             <li class="nav-item"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
             <li class="nav-item"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
             <li class="nav-item"><a href="#" onclick="memo()">여행 메모</a></li>
@@ -74,9 +88,7 @@
             <div class="photo-container">
                 <a href="https://eworld.kr/">
                     <img src="images/cablecar.JPG" alt="여수해상케이블카" class="photo">
-                </a>
-
-                
+                </a>      
                 <p>광주/전라도<br><br>여수해상케이블카</p>
             </div>
             <div class="photo-container">

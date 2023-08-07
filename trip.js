@@ -94,30 +94,52 @@ function toggleNav() {
   }
 }
 
-function openNewWindow(region) {
-  var url;
-  if (region === "서울") {
-      url = "seoul.html";
-  } else if (region === "경기/인천") {
-      url = "gyeonggi_incheon.html";
-  } else if (region === "대전/세종/충청") {
-      url = "daejeon_sejong_chungcheong.html";
-  } else if (region === "부산/울산") {
-      url = "busan_ulsan.html";
-  } else if (region === "대구/경상") {
-      url = "daegu_gyeongsang.html";
-  } else if (region === "광주/전라") {
-      url = "gwangju_jeolla.html";
-  } else if (region === "강원") {
-      url = "gangwon.html";
-  } else if (region === "제주") {
-      url = "jeju.html";
-  }
-  window.open(url);
+function toggleAccordion(accordionContent) {
+  var accordionContents = document.querySelectorAll('.accordion-content');
+
+  accordionContents.forEach(function (content) {
+    if (content === accordionContent) {
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    } else {
+      content.style.display = 'none';
+    }
+  });
 }
   
-function trip() {
+function region1() {
   location.href = "seoul.html";
+}
+
+function region2() {
+  location.href = "gyeonggi_incheon.html";
+}
+
+function region3() {
+  location.href = "daejeon_sejong_chungcheong.html";
+}
+
+function region4() {
+  location.href = "busan_ulsan.html";
+}
+
+function region5() {
+  location.href = "daegu_gyeongsang.html";
+}
+
+function region6() {
+  location.href = "gwangju_jeolla.html";
+}
+
+function region7() {
+  location.href = "gangwon.html";
+}
+
+function region8() {
+  location.href = "jeju.html";
 }
 
 function memo() {
