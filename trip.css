@@ -7,7 +7,6 @@
 .container {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/trip.avif);
     position: relative; /* 푸터의 위치를 설정하기 위해 상대 위치로 변경 */
 }
 
@@ -16,10 +15,17 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100px; /* 높이를 100px로 변경 */
+    height: 130px;
+    background-color: #333;
     margin: 0 auto;
     position: relative; /* header 요소 내의 절대 위치를 위해 상대 위치로 변경 */
     z-index: 1; /* 다른 요소보다 앞에 표시되도록 z-index 설정 */
+}
+
+.container .article {
+    background-color: #007bff;
+    width: 1600px;
+    height: 400px;
 }
 
 .container .header h1 a {
@@ -32,24 +38,24 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     position: absolute; 
     left: 30%;
-    top: 50%; 
+    top: 30%; 
     transform: translate(-50%, -50%); 
 }
 
 .container .search {
     width: 700px;
-    margin-left: 550px;
+    margin-left: 630px;
 }
 
 #searchTerm {
-    width: 270px;
+    width: 220px;
     height: 30px;
-    margin-top: 100px;
+    margin-top: 20px;
     margin-left: 100px;
     padding: 8px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 #searchButton {
@@ -69,39 +75,45 @@
 }
 
 #searchResult {
-    width: 300px;
-    height: 80px;
+    width: 250px;
+    height: 60px;
     margin-top: 10px;
     margin-left: 100px;
     padding: 8px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 13px;
     resize: none; /* 크기 조절 비활성화 */
 }
 
 .credentials {
     display: flex;
-    margin-top: 3px;
+    align-items: center;
+    margin-top: 10px;
     margin-right: 10px;
 }
 
 #id, #password {
-    padding: 5px;
-    width: 150px;
+    padding: 8px;
+    width: 100px;
     height: 30px;
     margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
 }
 
 #loginButton, #signupButton {
-    width: 70px;
+    width: 60px;
     height: 30px;
     padding: 5px;
     background-color: #007bff;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 13px;
+    transition: background-color 0.3s ease;
     margin-left: 5px;
 }
 
@@ -158,14 +170,20 @@
     left: 52%;
     top: 42%;
     transform: translate(-50%, -50%);  
+    background-color: #989595d6;
     color: white;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 1600px; /* 화면 너비에 맞추도록 변경 */
+    height: 400px; /* 내용에 따라 높이 자동 조절 */
+    padding: 20px; /* 내용과의 여백을 설정 */
+    box-sizing: border-box; /* 내용의 여백을 포함하여 전체 크기 유지 */
 }
 
 .container .article h2 {
     font-size: 50px;
     font-weight: bolder; 
+    margin-top: 100px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -181,7 +199,7 @@
     transform: translate(-50%, -50%);
 }
 
-.container .article1 {
+.container .nav_list1 {
   display: none;
   position: absolute;
   top: 80px;
@@ -193,12 +211,12 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container .article1 ul {
+.container .nav_list1 ul {
   list-style: none;
   padding: 0;
 }
 
-.container .article1 li {
+.container .nav_list1 li {
   padding: 10px;
   font-size: 16px;
   display: flex;
@@ -207,11 +225,11 @@
   transition: background-color 0.3s;
 }
 
-.container .article1 li:last-child {
+.container .nav_list1 li:last-child {
   border-bottom: none;
 }
 
-.container .article1 li a {
+.container .nav_list1 li a {
   font-size: 14px;
   text-decoration: none;
   color: #333;
@@ -219,23 +237,37 @@
   margin-left: 10px;
 }
 
-.container .article1 li svg {
+.container .nav_list1 li svg {
   width: 20px;
   height: 20px;
   fill: #1fdfdf;
 }
 
-.container .article1 .nav-item:hover {
+.container .nav_list1 .nav-item:hover {
   background-color: #f0f0f0;
 }
 
-.container .article1 .nav-item:hover a {
+.container .nav_list1 .nav-item:hover a {
   color: #1fdfdf;
 }
 
 
-.container .article1 .accordion-content {
+.container .nav_list1 .accordion-content {
     display: none;
+}
+
+.banner {
+    margin-top: 10px;
+    text-align: center;
+    position: relative; /* 배너도 relative로 설정 */
+    z-index: -1; /* 배너의 z-index를 article보다 작게 설정하여 밑으로 이동 */
+}
+
+.banner img {
+    width: 600px;
+    height: 280px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #p {
@@ -249,6 +281,11 @@
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 80px;
+}
+
+.footer {
+    background-color: #676969;
+    height: 600px;
 }
 
 .photos {
@@ -324,51 +361,6 @@
     width: 100%;
     height: 100%;
 }
-
-/*
-.footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background-color: rgba(0, 0, 0, 0.3); /* 반투명한 배경색 */
-/*
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-}
-
-.footer li {
-    margin: 0 15px;
-}
-
-.footer li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 20px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.footer li a:hover {
-    background-color: #1fdfdf;
-    color: #333; /* 호버 효과 시 글자색을 변경하여 텍스트가 더 잘 보이도록 함 */
-    /*
-    transform: scale(1.1);
-}
-*/
 
 @media screen and (max-width: 600px) {
     .container .header {
