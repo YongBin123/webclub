@@ -76,17 +76,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function toggleNav() {
-  var article1 = document.querySelector('.article1');
+  var navList1 = document.querySelector('.nav_list1');
   var photosContainer = document.querySelector('.photos-container');
 
-  if (article1.style.display === "none") {
-    article1.style.display = "block";
+  if (navList1.style.display === "none") {
+    navList1.style.display = "block";
     photosContainer.style.position = "absolute";
     photosContainer.style.top = "100px";
     photosContainer.style.left = "21%";
     photosContainer.style.transform = "translateX(-50%)";
   } else {
-    article1.style.display = "none";
+    navList1.style.display = "none";
     photosContainer.style.position = "relative";
     photosContainer.style.top = "0";
     photosContainer.style.left = "0";
