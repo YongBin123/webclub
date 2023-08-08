@@ -29,12 +29,13 @@
         </div>
     </header>   
     <article class="article">
+        <div class="banner">
+            <img src="images/trip.avif">
+        </div>
         <h2 id="welcomeHeading">여행지 추천 홈페이지에 오신 것을 환영합니다!</h2>
         <p id="infoText">여러분이 추천 받고 싶은 여행지가 있으시다면,<br>여기에서 많은 정보를 얻어가세요</p>
         <button id="hideButton1" onclick="goBack()" style="display: none;">메인화면으로</button>
-    </article>
-    <article class="article1">
-        <ul id ="nav_list1">
+        <ul class ="nav_list1">
             <li class="nav-item"><a href="#" onclick="toggleAccordion(document.querySelector('.accordion-content'))">지역별 여행지 추천</a></li>
             <li class="accordion-content">
                 <ul>
@@ -56,6 +57,7 @@
             <li class="nav-item"><a href="#" onclick="community()">여행 커뮤니티</a></li>
         </ul>
     </article>
+    <footer class ="footer">
     <div class="photos">
         <p id="p">지역별 인기 여행지 1위</p>
         <div class="photos-container">
@@ -105,6 +107,7 @@
             </div>
         </div>
     </div> 
+</footer>
 </div>
 </body>
 </html>
