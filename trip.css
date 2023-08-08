@@ -22,22 +22,18 @@
     z-index: 1; /* 다른 요소보다 앞에 표시되도록 z-index 설정 */
 }
 
-.container .header h1 {
-    display: flex;
-    align-items: center;
-    font-size: 50px; /* 폰트 크기를 30px로 변경 */
-    margin-top: 10px;
-    margin-left: 100px;
-}
-
 .container .header h1 a {
+    font-size: 40px;
+    font-weight: normal;
     margin-top: 30px;
     margin-left: 30px;
-    font-size: 40px;
-    font-weight: normal; 
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute; 
+    left: 30%;
+    top: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
 /* 햄버거 아이콘 스타일링 */
@@ -168,22 +164,9 @@
     display: none;
 }
 
-.container .search {
-    width: 400px;
-    height: 10px;
-    margin-top: 10px;
-}
-
 .container .search1 {
     width: 260px;
 }
-
-#searchTerm {
-    width: 220px;
-    margin-left: 100px;
-}
-
-
 
 #searchButton {
     margin-left: 5px;
