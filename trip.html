@@ -32,35 +32,37 @@
         <div class="banner">
             <img src="images/trip.avif">
         </div>
-        <h2 id="welcomeHeading">여행지 추천 홈페이지에 오신 것을 환영합니다!</h2>
+        <div class="info">
+            <h2 id="welcomeHeading">여행지 추천 홈페이지에<br>오신 것을 환영합니다!</h2>
         <p id="infoText">여러분이 추천 받고 싶은 여행지가 있으시다면,<br>여기에서 많은 정보를 얻어가세요</p>
-        <button id="hideButton1" onclick="goBack()" style="display: none;">메인화면으로</button>
-        <ul class ="nav_list1">
-            <li class="nav-item"><a href="#" onclick="toggleAccordion(document.querySelector('.accordion-content'))">지역별 여행지 추천</a></li>
-            <li class="accordion-content">
-                <ul>
-                    <li><a href="#" onclick="region1()">서울</a></li>
-                    <li><a href="#" onclick="region2()">경기도/인천</a></li>
-                    <li><a href="#" onclick="region3()">대전/세종/충청도</a></li>
-                    <li><a href="#" onclick="region4()">부산/울산</a></li>
-                    <li><a href="#" onclick="region5()">대구/경상도</a></li>
-                    <li><a href="#" onclick="region6()">광주/전라도</a></li>
-                    <li><a href="#" onclick="region7()">강원도</a></li>
-                    <li><a href="#" onclick="region8()">제주도</a></li>
-                </ul>
-            </li>
-            <li class="nav-item"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
-            <li class="nav-item"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
-            <li class="nav-item"><a href="#" onclick="memo()">여행 메모</a></li>
-            <li class="nav-item"><a href="#" onclick="plan()">여행 플래너</a></li>
-            <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
-            <li class="nav-item"><a href="#" onclick="community()">여행 커뮤니티</a></li>
-        </ul>
+        </div>
+        <div class="navList">
+            <ul class ="nav_list1">
+                <li class="nav-item"><a href="#" onclick="toggleAccordion(document.querySelector('.accordion-content'))">지역별 여행지 추천</a></li>
+                <li class="accordion-content">
+                    <ul>
+                        <li class="accordion"><a href="#" onclick="region1()">서울</a></li>
+                        <li class="accordion"><a href="#" onclick="region2()">경기도/인천</a></li>
+                        <li class="accordion"><a href="#" onclick="region3()">대전/세종/충청도</a></li>
+                        <li class="accordion"><a href="#" onclick="region4()">부산/울산</a></li>
+                        <li class="accordion"><a href="#" onclick="region5()">대구/경상도</a></li>
+                        <li class="accordion"><a href="#" onclick="region6()">광주/전라도</a></li>
+                        <li class="accordion"><a href="#" onclick="region7()">강원도</a></li>
+                        <li class="accordion"><a href="#" onclick="region8()">제주도</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" onclick="quiz()">여행 퀴즈 이벤트</a></li>
+                <li class="nav-item"><a href="#" onclick="packing()">여행 패킹 리스트</a></li>
+                <li class="nav-item"><a href="#" onclick="memo()">여행 메모</a></li>
+                <li class="nav-item"><a href="#" onclick="plan()">여행 플래너</a></li>
+                <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
+                <li class="nav-item"><a href="#" onclick="community()">여행 커뮤니티</a></li>
+            </ul>
+        </div>
     </article>
-    <footer class ="footer">
     <div class="photos">
-        <p id="p">지역별 인기 여행지 1위</p>
         <div class="photos-container">
+            <p id="p">지역별 인기 여행지 1위</p>
             <div class="photo-container">
                 <a href="https://www.lotteworld.com/gate.html">
                     <img src="images/lotte.jpeg" alt="롯데월드" class="photo">
@@ -107,7 +109,7 @@
             </div>
         </div>
     </div> 
-</footer>
+
 </div>
 </body>
 </html>
