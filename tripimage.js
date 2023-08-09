@@ -16,5 +16,4 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function goBefore() {
     window.location.href = "trip.html";
-    window.close();
   }
