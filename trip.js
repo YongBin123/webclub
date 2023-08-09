@@ -59,38 +59,13 @@ function search() {
   });
 }  
 
-document.addEventListener('DOMContentLoaded', function() {
-  const photoContainers = document.querySelectorAll('.photo-container');
-
-  photoContainers.forEach(function(photoContainer) {
-    const text = photoContainer.querySelector('p');
-
-    photoContainer.addEventListener('mouseenter', function() {
-      text.style.visibility = 'visible';
-    });
-
-    photoContainer.addEventListener('mouseleave', function() {
-      text.style.visibility = 'hidden';
-    });
-  });
-});
-
 function toggleNav() {
   var navList1 = document.querySelector('.nav_list1');
-  var photosContainer = document.querySelector('.photos-container');
 
   if (navList1.style.display === "none") {
-    navList1.style.display = "block";
-    photosContainer.style.position = "absolute";
-    photosContainer.style.top = "100px";
-    photosContainer.style.left = "21%";
-    photosContainer.style.transform = "translateX(-50%)";
+      navList1.style.display = "block";
   } else {
-    navList1.style.display = "none";
-    photosContainer.style.position = "relative";
-    photosContainer.style.top = "0";
-    photosContainer.style.left = "0";
-    photosContainer.style.transform = "none";
+      navList1.style.display = "none";
   }
 }
 
