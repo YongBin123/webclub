@@ -8,8 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-  // 로컬 스토리지에서 메모 불러오기
-  loadMemosFromLocalStorage(); // 로컬 스토리지에 저장된 메모를 가져와서 화면에 표시하는 함수
+  
 });
 
 function createMemoElement(memo) {
