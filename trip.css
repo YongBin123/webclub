@@ -29,7 +29,7 @@
 }
 
 .container .header h1 a {
-    font-size: 55px;
+    font-size: 60px;
     font-weight: normal;
     margin-top: 30px;
     margin-left: 10px;
@@ -167,15 +167,15 @@
 
 .container .article {
     position: absolute;
-    left: 52%;
-    top: 42%;
+    left: 50%;
+    top: 39%;
     transform: translate(-50%, -50%);  
     background-color: #989595d6;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 1600px; /* 화면 너비에 맞추도록 변경 */
-    height: 400px; /* 내용에 따라 높이 자동 조절 */
+    width: 100%; /* 화면 너비에 맞추도록 변경 */
+    height: 900px; /* 내용에 따라 높이 자동 조절 */
     padding: 20px; /* 내용과의 여백을 설정 */
     box-sizing: border-box; /* 내용의 여백을 포함하여 전체 크기 유지 */
 }
@@ -183,28 +183,42 @@
 .container .article h2 {
     font-size: 50px;
     font-weight: bolder; 
-    margin-top: 100px;
+    margin-top: 330px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: rgb(255, 255, 255);
+}
+
+.container .article .info {
+    width: 600px;
+    left: 570px;
+    top: 360px;
 }
 
 .container .article p {
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .container .article div {
     position: absolute;
-    left: 50%;
-    top: 55%;
+    width: 220px;
+    height: 640px;
+    left: 7%;
+    top: 580px;
     transform: translate(-50%, -50%);
+}
+
+.container .navList {
+    background-color: #c8c5c5;
+    z-index: 2;
 }
 
 .container .nav_list1 {
   display: none;
   position: absolute;
-  top: 80px;
-  left: 30px;
-  width: 200px;
+  top: 30px;
+  left: 5px;
+  width: 215px;
   background-color: #fff;
   border-radius: 5px;
   z-index: 2;
@@ -218,11 +232,16 @@
 
 .container .nav_list1 li {
   padding: 10px;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: bolder; 
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f0f0f0;
   transition: background-color 0.3s;
+}
+
+.container .nav_list1 .accordion a {
+    font-size: 13px;
 }
 
 .container .nav_list1 li:last-child {
@@ -251,41 +270,40 @@
   color: #1fdfdf;
 }
 
-
 .container .nav_list1 .accordion-content {
     display: none;
 }
 
 .banner {
-    margin-top: 10px;
+    margin-top: 30px;
     text-align: center;
     position: relative; /* 배너도 relative로 설정 */
     z-index: -1; /* 배너의 z-index를 article보다 작게 설정하여 밑으로 이동 */
 }
 
 .banner img {
-    width: 600px;
-    height: 280px;
+    width: 550px;
+    height: 320px;
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 950px;
 }
 
 #p {
     display: grid;
-    font-size: 23px;
+    font-size: 22px;
     position: absolute;
-    left: 12%;
-    top: 60%;
+    left: 10%;
+    top: 10%;
     transform: translate(-50%, -50%);  
     color: white;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-top: 80px;
-}
-
-.footer {
-    background-color: #676969;
-    height: 600px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-bottom: 10px;
+    margin-top: 3px;
 }
 
 .photos {
@@ -294,13 +312,19 @@
 
 .photos-container {
     display: grid;
-    width: 640px;
-    height: 300px;
+    position: relative; /* 처음부터 위치는 relative로 유지 */
+    top: 0; /* 초기 위치는 top: 0으로 설정 */
+    left: 0; /* 초기 위치는 left: 0으로 설정 */
+    transform: none; /* 초기 변형은 없음 */
+    width: 1300px;
+    height: 200px;
+    background-color: #6e6c6c;
     border-radius: 5px;
-    grid-template-columns: repeat(8, 180px); /* 4개의 열, 각 열의 너비는 150px */
-    grid-template-rows: 150px 150px 150px 150px;
-    margin-left: 35px;
-    margin-top: 450px;
+    grid-template-columns: repeat(8, 158px); /* 4개의 열, 각 열의 너비는 150px */
+    grid-template-rows: 180px;
+    padding-left: 5px;
+    margin-left: 215px;
+    margin-top: 405px;
 }
 
 .photo {
@@ -315,9 +339,10 @@
     display: flex;
     overflow: hidden;
     border-radius: 10px;
-    margin: 10px;
-    border-radius: 8px;
+    margin-top: 40px;
+    margin-left: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 1;
 }
 
 .photo-container img {
@@ -332,12 +357,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%; /* 글자가 잘리지 않도록 너비 조정 */
-    text-align: center; /* 가운데 정렬 */
+    width: 90%;
+    text-align: center;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .photos-container.active {
@@ -350,10 +373,6 @@
 
 .photo-container:hover img {
     transform: scale(1.1);
-}
-  
-.photo-container:hover p {
-    opacity: 1;
 }
   
 .photo-container a {
@@ -389,3 +408,5 @@
         padding: 10px 15px;
     }
 }
+
+
