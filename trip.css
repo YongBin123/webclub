@@ -61,7 +61,7 @@
 #searchButton {
     margin-left: 10px;
     padding: 5px;
-    background-color: #007bff;
+    background-color: #516b87;
     color: white;
     border: none;
     border-radius: 5px;
@@ -103,11 +103,11 @@
     font-size: 13px;
 }
 
-#loginButton, #signupButton {
+#loginButton {
     width: 60px;
     height: 30px;
     padding: 5px;
-    background-color: #007bff;
+    background-color: #516b87;
     color: white;
     border: none;
     border-radius: 5px;
@@ -116,6 +116,21 @@
     transition: background-color 0.3s ease;
     margin-left: 5px;
 }
+
+#signupButton {
+    width: 70px;
+    height: 30px;
+    padding: 5px;
+    background-color: #366b9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+}
+
 
 #loginButton:hover, #signupButton:hover {
     background-color: #0056b3;
@@ -149,6 +164,15 @@
 .nav.active ul {
     display: flex;
     flex-direction: column;
+}
+
+.guide {
+    width: 200px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 /* 반응형 스타일링을 위해 미디어 쿼리 사용 */
@@ -191,8 +215,8 @@
 
 .container .article .info {
     width: 600px;
-    left: 570px;
-    top: 360px;
+    left: 575px;
+    top: 380px;
 }
 
 .container .article p {
@@ -283,7 +307,7 @@
 
 .banner img {
     width: 550px;
-    height: 320px;
+    height: 350px;
     border-radius: 10px;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
     margin-top: 30px;
@@ -361,6 +385,7 @@
     text-align: center;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
 }
 
 .photos-container.active {
