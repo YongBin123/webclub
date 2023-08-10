@@ -166,15 +166,6 @@
     flex-direction: column;
 }
 
-.guide {
-    width: 200px;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 10px;
-}
-
 /* 반응형 스타일링을 위해 미디어 쿼리 사용 */
 @media screen and (max-width: 768px) {
     /* 햄버거 아이콘 숨기기 */
@@ -235,6 +226,32 @@
 .container .navList {
     background-color: #c8c5c5;
     z-index: 2;
+}
+
+.container .navList .consulting {
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 220px;
+    height: 150px;
+    margin-top: 100px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding-bottom: 10px;
+}
+
+.container .navList .tel {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.container .navList .time {
+    color: #777;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
 }
 
 .container .nav_list1 {
