@@ -22,10 +22,10 @@
             <textarea id="searchResult" rows="5" cols="45" placeholder="검색한 여행지의 주소 정보가 이곳에 뜹니다."></textarea>
         </div>
         <div class="credentials">
-            <input type="text" id="id" placeholder="아이디">
-            <input type="password" id="password" placeholder="비밀번호">
+            <input type="text" id="id" placeholder="아이디" autocomplete="off">
+            <input type="password" id="password" placeholder="비밀번호" autocomplete="off">
             <button id="loginButton" onclick="login()">로그인</button>
-
+            <button id="signupButton" onclick="join()">회원가입</button>
         </div>
     </header>   
     <article class="article">
@@ -58,6 +58,7 @@
                 <li class="nav-item"><a href="#" onclick="review()">여행지 리뷰</a></li>
                 <li class="nav-item"><a href="#" onclick="community()">여행 커뮤니티</a></li>
             </ul>
+            <p>이용 안내</p>
         </div>
     </article>
     <div class="photos">
@@ -94,7 +95,7 @@
                 <p>대구/경상도<br><br>이월드</p>
             </div>
             <div class="photo-container">
-                <a href="https://eworld.kr/">
+                <a href="http://yeosucablecar.com/">
                     <img src="images/cablecar.JPG" alt="여수해상케이블카" class="photo">
                 </a>      
                 <p>광주/전라도<br><br>여수해상케이블카</p>
@@ -107,6 +108,10 @@
                 <img src="images/hill.jpeg" alt="Photo 8" class="photo">
                 <p>제주도<br><br>카멜리아힐</p>
             </div>
+        </div>
+        <div class="guide">
+            <h2>이용안내</h2>
+            <p>여행지</p>
         </div>
     </div> 
 
