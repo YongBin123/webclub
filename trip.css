@@ -228,30 +228,133 @@
     z-index: 2;
 }
 
+.container .navList .consult {
+    width: 205px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border: 2px solid #516b87;
+    padding: 10px;
+    border-radius: 5px;
+    top: 400px;
+    margin-left: 95px;
+}
+
+.container .navList .useguide {
+    width: 205px;
+    height: 140px;
+    background-color: #f0f0f0;
+    border: 2px solid #516b87;
+    padding: 10px;
+    border-radius: 5px;
+    top: 560px;
+    margin-left: 95px;
+}
+
 .container .navList .consulting {
-    color: white;
-    font-size: 15px;
+    color: rgb(76, 88, 114);
+    font-size: 24px;
+    font-weight: bolder;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    width: 220px;
-    height: 150px;
-    margin-top: 100px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    padding-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.container .navList .guide {
+    color: rgb(76, 88, 114);
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 7px;
 }
 
 .container .navList .tel {
+    position: absolute;
     color: #333;
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
-    margin-top: 5px;
+    top: 55px;
+    left: 50px;
 }
 
 .container .navList .time {
-    color: #777;
-    font-size: 12px;
+    position: absolute;
+    color: #515050;
+    font-size: 13px;
+    font-weight: bolder;
     text-align: center;
     margin-top: 5px;
+    top: 80px;
+    left: 5px;
+}
+
+#use {
+    width: 100px;
+    padding: 10px;
+    background-color: #516b87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#use:hover {
+    background-color: #0056b3;
+}
+
+#point {
+    width: 72px;
+    padding: 10px;
+    background-color: #516b87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 3px;
+}
+
+#point:hover {
+    background-color: #0056b3;
+}
+
+#question {
+    width: 100px;
+    padding: 10px;
+    background-color: #516b87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 1px;
+    margin-top: 5px;
+}
+
+#question:hover {
+    background-color: #0056b3;
+}
+
+#promotion {
+    width: 72px;
+    padding: 10px;
+    background-color: #516b87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 3px; /* 버튼 사이의 간격을 위해 마진 추가 */
+}
+
+#promotion:hover {
+    background-color: #0056b3;
 }
 
 .container .nav_list1 {
