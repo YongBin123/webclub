@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(images/trip.avif);
+    background: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url(images/trip.avif);
     display: flex;
     justify-content: center;
     align-items: center;

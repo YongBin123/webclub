@@ -30,6 +30,26 @@ const questions = [
     {
         question: "조선시대 정조 시기, 정조와 정약용이 지은 성의 이름은?",
         answer: "수원화성"
+    },
+    {
+        question: "한국의 섬 중에서 가장 크고 인구가 많은 섬이기도 하며 매년 수많은 관광객들이 방문하는 섬의 이름은?",
+        answer: "제주도"
+    },
+    {
+        question: "서울의 쇼핑 중심지라 불리는 행정동이며 언제나 내외국인 관광객들로 붐비는 곳은 어디인가?",
+        answer: "명동"
+    },
+    {
+        question: "경기도 용인에 위치해 있으며, 국내 최대의 테마파크인 이곳의 이름은?",
+        answer: "에버랜드"
+    },
+    {
+        question: "인천광역시에 위치해 있으며 섬의 생김새가 반달 꼬리 모양 같아 붙여진 과거에 섬이었던 곳의 이름은?",
+        answer: "월미도"
+    },
+    {
+        question: "제주특별자치도 서귀포시 성산읍 성산리에 있는 산이며, 커다란 사발 모양의 분화구가 특징인 이곳의 이름은?",
+        answer: "성산일출봉"
     }
 ];
 
@@ -68,6 +88,14 @@ function checkAnswer() {
 function loadNextQuestion() {
     const feedback = document.getElementById("feedback");
     feedback.textContent = ""; // 피드백 초기화
+
+    const answerInput = document.getElementById("answer");
+    const userAnswer = answerInput.value; // 사용자가 입력한 정답
+    const correctAnswer = questions[currentQuestion].answer; // 현재 질문의 정답
+
+    if (userAnswer === correctAnswer) {
+        score++;
+    }
 
     currentQuestion++;
 
