@@ -1,3 +1,3 @@
-  function goBefore() {
-    window.location.href = "trip.html";
-  }
+function goBefore() {
+  window.location.href = "trip.html";
+}
