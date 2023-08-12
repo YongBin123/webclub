@@ -17,11 +17,13 @@
         </div>
         <div id="answer-container">
             <textarea class="input" id="answer" placeholder="정답을 입력하세요" autocomplete="off"></textarea>
-            <button class="submit" onclick="checkAnswer()">정답 확인</button>
-            <button class="next" onclick="loadNextQuestion()">다음 문제로</button>
+            <div class="button-group">
+                <button class="submit" onclick="checkAnswer()">정답 확인</button>
+                <button class="next" onclick="loadNextQuestion()">다음 문제로</button>
+            </div>
         </div>
-        <div id="feedback"></div>
     </div>
+    <div id="feedback"></div>
     <script src="quiz.js"></script>
 </body>
 </html>
