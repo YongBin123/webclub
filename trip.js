@@ -1,3 +1,12 @@
+window.onload = function() {
+  showNavList1();
+}
+
+function showNavList1() {
+  var navList1 = document.querySelector('.nav_list1');
+  navList1.style.display = "block"; // 'nav_list1'을 나타나게 설정
+}
+
 function login() {
   event.preventDefault();
   var loginForm = document.querySelector('.login-form');
@@ -83,6 +92,11 @@ function toggleAccordion(accordionContent) {
       content.style.display = 'none';
     }
   });
+}
+
+function showNavList1() {
+  var navList1 = document.querySelector('.nav_list1');
+  navList1.style.display = "block"; // 'nav_list1'을 나타나게 설정
 }
   
 function region1() {
