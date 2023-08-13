@@ -7,7 +7,7 @@ body {
 nav {
     display: flex;
     justify-content: flex-start;
-    height: 50px;
+    height: 40px;
     align-items: center;
     padding: 20px;
     background-color: #333333;
@@ -19,13 +19,18 @@ nav {
     border: none;
     background: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     color: #ffffff; 
+    font-weight: 600;
+}
+
+#before:hover {
+    transform: scale(1.1);
 }
 
 .container {
     max-width: 800px;
-    height: 250px;;
+    height: 270px;;
     margin: 20px auto;
     background-color: #ffffff;
     padding: 20px;
@@ -68,8 +73,7 @@ h1 {
     display: flex;
 }
 
-.submit,
-.next {
+.submit {
     background-color: #4CAF50;
     color: #ffffff;
     border: none;
@@ -78,6 +82,27 @@ h1 {
     border-radius: 5px;
     font-weight: bold;
     margin-right: 10px;
+}
+
+.submit:hover {
+    background-color: #45A242;
+    transform: scale(1.1);
+}
+
+.next {
+    background-color: #ff9800;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.next:hover {
+    background-color: #f78820;
+    transform: scale(1.1);
 }
 
 #feedback {
