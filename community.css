@@ -1,176 +1,131 @@
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/trip.avif);
-    padding: 20px;
-}
-
-#before {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #f4746b;
-    border: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 15px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#before:hover {
-    background-color: #d63c33;
-    transform: scale(1.1);
+    background-color: #f2f2f2;
 }
 
 nav {
-    padding: 10px;
+    display: flex;
+    height: 50px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: #333333;
+    color: #ffffff;
 }
 
-nav h1 {
-    color: #ffffff;
-    font-size: 32px;
-    margin-bottom: 30px;
-    margin-top: 7px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
+h1 {
+    font-size: 30px;;
+    margin-left: 660px;
+}
+
+#before {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    left: 1%;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .post-form {
-    height: 350px;
     margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 97.5%;
     padding: 10px;
-    background-color: #ffffff;
-    border: 2px solid #4CAF50;
+    border: 1px solid #cccccc;
     border-radius: 5px;
-    flex: 1; /* 왼쪽 영역 차지 */
-    margin-right: 20px;
-    margin-top: 50px;
+    resize: none;
+    margin-top: 5px;
 }
 
-.post-form h2 {
-    margin-bottom: 10px;
+textarea {
+    height: 100px;
 }
 
-.post-form label {
-    display: inline-block;
-    margin-bottom: 5px;
+button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
 }
 
-.post-form input[type="text"] {
-    width: 98%;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-.post-form textarea {
-    width: 98%;
-    height: 50px;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-.post-form button[type="submit"] {
-  background-color: #4CAF50;
-  color: #ffffff;
-  border: none;
-  font-weight: bold;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.post-form button[type="submit"]:hover {
-  background-color: #45A242;
-  transform: scale(1.05);
+button:hover {
+    background-color: #45A242;
+    transform: scale(1.1);
 }
 
 #delete {
-    border-radius: 5px;
-    background-color: #f49c06;
-    margin-left: 5px;
-    border: none;
-    color: #ffffff;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
-    cursor: pointer;
+    background-color: #ff9800;
+    margin-top: 10px;
 }
 
 #delete:hover {
-    background-color: #f59841;
+    background-color: #f78820;
     transform: scale(1.1);
 }
 
 .post-list {
-    height: 500px;
-    flex: 1; /* 오른쪽 영역 차지 */
-}
-
-.post-list li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #dddddd;
-    padding-bottom: 10px;
-    position: relative;
-}
-
-.post-list li .delete-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #e74c3c;
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    font-size: 13px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.post-list li .delete-button:hover {
-    background-color: #c0392b;
-}
-
-.post-info {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 13px;
-  color: #666666;
-}
-
-.post-content {
-  font-size: 15px;
-}
-
-.post-info strong {
-  font-weight: bold;
-  margin-right: 5px;
-}
-
-.post-list {
-    padding: 10px;
-    background-color: #ffffff;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
+    max-width: 800px;
+    margin: 20px auto;
 }
 
 .post-list h2 {
-    margin-bottom: 10px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.post-list ol {
+    list-style: none;
+    padding: 0;
 }
 
 .post-list li {
     margin-bottom: 10px;
-    border-bottom: 1px solid #dddddd;
-    padding-bottom: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.delete-button {
+    background-color:#f4746b;
+}
+
+.delete-button:hover {
+    background-color: #d63c33;
+    transform: scale(1.1);
 }
