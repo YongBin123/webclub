@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-  
+  loadMemosFromLocalStorage()
 });
 
 function createMemoElement(memo) {
@@ -19,7 +19,8 @@ function createMemoElement(memo) {
   var memoContent = document.createElement('p');
   memoContent.textContent = memo.content;
 
-  var deleteButton = document.createElement('button');
+  var deleteButton = document.createElement('span'); // 버튼을 span으로 변경
+  deleteButton.classList.add('delete-btn'); // delete-btn 클래스 추가
   deleteButton.textContent = '삭제';
   deleteButton.onclick = function () {
     deleteMemoOnServer(memo.id); // 서버에서 메모 삭제 요청
@@ -112,3 +113,4 @@ function goBack() {
   window.open('trip.html');
   window.close();
 }
+
