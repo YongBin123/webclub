@@ -6,6 +6,7 @@ body {
 
 nav {
     display: flex;
+    height: 50px;
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
@@ -13,11 +14,22 @@ nav {
     color: #ffffff;
 }
 
+nav h1 {
+    font-size: 30px;;
+    margin-left: 660px;
+}
+
 #before {
     border: none;
     background: none;
     cursor: pointer;
     font-size: 20px;
+    position: absolute;
+    left: 1%;
+}
+
+#before:hover {
+    transform: scale(1.1);
 }
 
 .container {
@@ -27,12 +39,6 @@ nav {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333333;
 }
 
 .memo {
