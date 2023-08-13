@@ -6,22 +6,28 @@ body {
 
 nav {
     display: flex;
-    justify-content: flex-start;
     height: 40px;
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
     background-color: #333333;
     color: #ffffff;
-    font-weight: bolder;
+}
+
+nav h1 {
+    font-size: 30px;
+    margin-left: 660px;
 }
 
 #before {
+    color: #ffffff;
     border: none;
     background: none;
     cursor: pointer;
     font-size: 20px;
-    color: #ffffff; 
     font-weight: 600;
+    position: absolute;
+    left: 1%;
 }
 
 #before:hover {
@@ -36,12 +42,6 @@ nav {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333333;
 }
 
 #quiz {
