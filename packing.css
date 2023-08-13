@@ -1,15 +1,25 @@
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    margin: 20px;
-    background: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url(images/trip.avif);
+    background-color: #f2f2f2;
 }
-  
+
+nav {
+    display: flex;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
 h1 {
     color: #ffffff;
     font-size: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 label {
@@ -45,25 +55,17 @@ label {
 }
 
 #before {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #f4746b;
     border: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 15px 20px;
-    border-radius: 20px;
+    background: none;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  #before:hover {
-    background-color: #D6463C;
+    font-size: 20px;
+    color: #ffffff; 
+    font-weight: 600;
+}
+
+#before:hover {
     transform: scale(1.1);
-  }
+}
   
 #item-list {
     display: grid;
@@ -84,8 +86,8 @@ label {
 }
 
 .item img {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 145px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 5px;
