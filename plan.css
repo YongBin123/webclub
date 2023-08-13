@@ -1,14 +1,23 @@
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/trip.avif);
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+nav {
+    display: flex;
+    height: 40px;
+    justify-content: flex-start;
+    align-items: center;
     padding: 20px;
-    color: #080808;
+    background-color: #333333;
+    color: #ffffff;
 }
 
 #schedule-form {
+    margin-top: 10px;
     margin-bottom: 20px;
-    margin-left: 350px;
+    margin-left: 200px;
 }
 
 #content-form {
@@ -59,23 +68,15 @@ body {
 }
 
 #before {
-    position: absolute;
-    top: 20px;
-    left: 25px;
-    background-color: #f4746b;
     border: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 15px 20px;
-    border-radius: 20px;
+    background: none;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    color: #ffffff; 
+    font-weight: 600;
 }
 
 #before:hover {
-    background-color: #d63c33;
     transform: scale(1.1);
 }
 
