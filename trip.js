@@ -154,3 +154,8 @@ function review() {
 function community() {
   location.href = "community.html";
 }
+
+function guide() {
+  window.open("guide.html");
+}
+  
