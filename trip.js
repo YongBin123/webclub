@@ -156,6 +156,6 @@ function community() {
 }
 
 function guide() {
-  window.open("guide.html");
+  location.href = "guide.html";
 }
   
