@@ -504,9 +504,14 @@
     width: 90%;
     text-align: center;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 5px;
+    padding: 3px;
 }
+
+.photo-container p:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
 
 .photos-container.active {
     position: absolute;
