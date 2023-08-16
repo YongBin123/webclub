@@ -7,16 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
   loadReviewsFromServer();
   loadReviewsFromLocalStorage();
 
-  // 별점 선택 기능
-  const stars = document.querySelectorAll('.star-rating .star');
-  stars.forEach((star, index) => { // stars 배열에 있는 각 별 아이콘 요소
+  const starsContainers = document.querySelectorAll('.star-rating');
+  starsContainers.forEach((container, index) => {
+  const stars = container.querySelectorAll('.star');
+  stars.forEach((star, starIndex) => {
     star.addEventListener('click', () => {
-      selectedRating = index + 1; // 클릭한 별의 개수를 selectedRating 변수에 저장
-      stars.forEach((starElement, i) => {
-        starElement.classList.toggle('active', i < selectedRating); // 현재 별 아이콘의 index(i)가 클릭한 별의 index(selectedRating)보다 작다면,
+      selectedRating = starIndex + 1;
+      stars.forEach((s, i) => {
+        s.classList.toggle('active', i < selectedRating);
       });
     });
   });
+});
 
   reviewForm.addEventListener('submit', function (event) {
     event.preventDefault();
