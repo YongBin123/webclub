@@ -1,3 +1,5 @@
+window.onload = loadQuestion;
+
 const questions = [
     {
         question: "서울에 있으며, 1592년 임진왜란 때 소실되어 방치되다가 흥선대원군 주도로 중건된 조선시대 궁궐의 이름은?",
@@ -70,6 +72,7 @@ function loadQuestion() {
     answerInput.focus();
 }
 
+/*
 function checkAnswer() {
     const userAnswer = document.getElementById("answer").value;
     const correctAnswer = questions[currentQuestion].answer;
@@ -90,6 +93,7 @@ function checkAnswer() {
         nextButton.textContent = "결과 보기";
     }
 }
+*/
 
 function checkAnswer() {
     const userAnswer = document.getElementById("answer").value; // 사용자가 입력한 정답
@@ -154,8 +158,6 @@ function showResults() {
     const answerContainer = document.getElementById("answer-container");
     answerContainer.style.display = "none";
 }
-
-window.onload = loadQuestion;
 
 function goBack() {
     window.open("trip.html");
