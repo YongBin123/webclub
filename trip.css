@@ -22,12 +22,6 @@
     z-index: 1; /* 다른 요소보다 앞에 표시되도록 z-index 설정 */
 }
 
-.container .article {
-    background-color: #007bff;
-    width: 1600px;
-    height: 400px;
-}
-
 .container .header h1 a {
     font-size: 60px;
     font-weight: normal;
@@ -131,7 +125,6 @@
     margin-left: 5px;
 }
 
-
 #loginButton:hover, #signupButton:hover {
     background-color: #0056b3;
 }
@@ -155,30 +148,29 @@
     margin-right: 30px;
 }
 
-/* 네비게이션 메뉴 초기에는 숨기기 */
+/*
 .nav ul {
     display: none;
 }
 
-/* 네비게이션 메뉴 보이기 */
 .nav.active ul {
     display: flex;
     flex-direction: column;
 }
+*/
 
-/* 반응형 스타일링을 위해 미디어 쿼리 사용 */
+/*
 @media screen and (max-width: 768px) {
-    /* 햄버거 아이콘 숨기기 */
     .hamburger {
         display: none;
     }
-
-    /* 네비게이션 메뉴 보이기 */
+    
     .nav.active ul {
         display: flex;
         flex-direction: column;
     }
 }
+*/
 
 .container .article {
     position: absolute;
@@ -289,6 +281,45 @@
     left: 5px;
 }
 
+.container .nav_list1 ul {
+  list-style: none;
+  padding: 0;
+}
+
+.container .nav_list1 li {
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bolder; 
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+.container .nav_list1 .accordion a {
+    font-size: 13px;
+}
+
+.container .nav_list1 li:last-child {
+  border-bottom: none;
+}
+
+.container .nav_list1 li a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+  margin-left: 10px;
+}
+
+.container .nav_list1 .nav-item:hover a {
+  color: #1fdfdf;
+}
+
+.container .nav_list1 .accordion-content {
+    display: none;
+}
+
 #use {
     width: 100px;
     padding: 10px;
@@ -367,55 +398,6 @@
   border-radius: 5px;
   z-index: 2;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.container .nav_list1 ul {
-  list-style: none;
-  padding: 0;
-}
-
-.container .nav_list1 li {
-  padding: 10px;
-  font-size: 15px;
-  font-weight: bolder; 
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background-color 0.3s;
-}
-
-.container .nav_list1 .accordion a {
-    font-size: 13px;
-}
-
-.container .nav_list1 li:last-child {
-  border-bottom: none;
-}
-
-.container .nav_list1 li a {
-  font-size: 14px;
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
-  margin-left: 10px;
-}
-
-.container .nav_list1 li svg {
-  width: 20px;
-  height: 20px;
-  fill: #1fdfdf;
-}
-
-.container .nav_list1 .nav-item:hover {
-  background-color: #f0f0f0;
-}
-
-.container .nav_list1 .nav-item:hover a {
-  color: #1fdfdf;
-}
-
-.container .nav_list1 .accordion-content {
-    display: none;
 }
 
 .banner {
@@ -513,6 +495,7 @@
     background-color: rgba(0, 0, 0, 0.9);
   }
 
+  /*
 .photos-container.active {
     position: absolute;
     left: 50%;
@@ -520,6 +503,7 @@
     transform: translateX(-50%);
     transition: top 1s;
   }
+*/
 
 .photo-container:hover img {
     transform: scale(1.1);
