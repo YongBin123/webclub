@@ -1,14 +1,14 @@
 window.addEventListener('DOMContentLoaded', () => {
   // 페이지가 로드될 때 서버에서 메모 가져오기
-  fetch('/getMemos') // 서버에 '/getMemos' 경로로 요청을 보내서 메모를 가져옴
-    .then((response) => response.json()) // 서버 응답은 json 형식으로
-    .then((memos) => { // json 데이터 처리
+  fetch('/getMemos')
+    .then((response) => response.json())
+    .then((memos) => {
       memos.forEach((memo) => {
         createMemoElement(memo);
       });
     });
 
-  loadMemosFromLocalStorage()
+  loadMemosFromLocalStorage();
 });
 
 function createMemoElement(memo) {
