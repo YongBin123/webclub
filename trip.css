@@ -148,30 +148,6 @@
     margin-right: 30px;
 }
 
-/*
-.nav ul {
-    display: none;
-}
-
-.nav.active ul {
-    display: flex;
-    flex-direction: column;
-}
-*/
-
-/*
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: none;
-    }
-    
-    .nav.active ul {
-        display: flex;
-        flex-direction: column;
-    }
-}
-*/
-
 .container .article {
     position: absolute;
     left: 50%;
